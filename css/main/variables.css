@@ -1,0 +1,167 @@
+:root {
+    /*SPACING
+    fluid responsive spacing based on typography scales on desktop
+    
+    Calculate the space sizes based on the mathematical scale used for typography: utopia.fyi
+    Create responsive clamp units: https://websemantics.uk/tools/fluid-responsive-property-calculator/
+    */
+    --space-xs: clamp(1.2rem, calc(1.2rem + ((1vw - 0.48rem) * 0.25)), 1.4rem); /*1.4rem to 1.2rem*/
+    --space-s: clamp(1.6rem, calc(1.6rem + ((1vw - 0.48rem) * 0.25)), 1.8rem); /*1.8rem to 1.6rem*/
+    --space-m: clamp(2.3rem, calc(2.3rem + ((1vw - 0.48rem) * 0.5)), 2.7rem); /*2.7rem to 2.3rem*/
+    --space-l: clamp(3.2rem, calc(3.2rem + ((1vw - 0.48rem) * 0.5)), 3.6rem); /*3.6rem to 3.2rem*/
+    --space-xl: clamp(4.8rem, calc(4.8rem + ((1vw - 0.48rem) * 0.75)), 5.4rem); /*5.4rem to 4.8rem*/
+    --space-2xl: clamp(6.4rem, calc(6.4rem + ((1vw - 0.48rem) * 1)), 7.2rem); /*7.2rem to 6.4rem*/
+    --space-3xl: clamp(9.6rem, calc(9.6rem + ((1vw - 0.48rem) * 1.5)), 10.8rem); /*10.8rem to 9.6rem*/
+
+    /*contextual spacing variables*/
+    --section-space: calc(var(--space-2xl) * 2.75);    
+    --section-header-gap: calc(var(--space-xs) * .75);
+    --content-gap: var(--space-m);
+    --grid-gap: var(--space-2xl);
+    --grid-gap-left-right: var(--space-xl);
+
+    /*FONT FACE*/
+    --ff-display: Georgia, 'Times New Roman', Times, serif;
+    --ff-text: "Urbanist", sans-serif;
+
+    /*FONT SIZE (font sizes from 128rem to 48rem)
+
+    Fluid responsive typography:
+    -major third type scale on desktop
+    -minor third type scale on mobile
+    -H1 override
+
+    Viewport widths:
+    -base section width = 140rem (--_content-narrow-width + --_content-width-increment)
+    smallest viewport width: 36rem (smallest modern phone screen width on average)
+    
+    Calculate the font sizes based on a mathematical scale: utopia.fyi
+    Create responsive clamp units: https://websemantics.uk/tools/fluid-responsive-property-calculator/
+    */
+    --fs-h1: clamp(3.8rem, calc(3.8rem + ((1vw - 0.48rem) * 2.75)), 6rem);; /*6.7rem to 3.5rem*/
+    --fs-h2: clamp(3.3rem, calc(3.3rem + ((1vw - 0.48rem) * 1.375)), 4.4rem); /*4.4rem to 3.3rem*/
+    --fs-h3: clamp(2.75rem, calc(2.75rem + ((1vw - 0.48rem) * 0.9375)), 3.5rem); /*3.5rem to 2.75rem*/
+    --fs-h4: clamp(2.3rem, calc(2.3rem + ((1vw - 0.48rem) * 0.625)), 2.8rem); /*2.8rem to 2.3rem*/
+    --fs-body-large: clamp(1.9rem, calc(1.9rem + ((1vw - 0.48rem) * 0.4375)), 2.25rem); /*2.25rem to 1.9rem*/
+    --fs-body: clamp(1.6rem, calc(1.6rem + ((1vw - 0.48rem) * 0.25)), 1.8rem);; /*1.8rem to 1.6rem*/
+	--fs-body-small: clamp(1.3rem, calc(1.3rem + ((1vw - 0.48rem) * 0.1875)), 1.45rem);; /*1.45rem to 1.3rem*/
+
+     /*FONT WEIGHT*/
+     --fw-regular: 400;
+     --fw-medium: 500;
+     --fw-semi-bold: 600;
+     --fw-bold: 700;
+     --fw-black: 900;
+
+    /*COLOR*/
+    /*raw partials -- hue*/
+    --hue-primary: 285;
+    --hue-secondary: 246;
+    --hue-tertiary: 156;
+
+    /*raw partials -- saturation*/
+    --saturation-primary: 87%;
+    --saturation-secondary: 86%;
+    --saturation-tertiary: 86%;
+
+    /*raw partials -- lightness*/
+    --lightness-950: 6%;
+    --lightness-900: 13%;
+    --lightness-800: 26%;
+    --lightness-700: 39%;
+    --lightness-600: 52%;
+    --lightness-500: 65%;
+    --lightness-400: 72%;
+    --lightness-300: 79%;
+    --lightness-200: 86%;
+    --lightness-100: 93%;
+    --lightness-50: 96%;
+
+    /*contextual lightness partials*/
+    --lightness-dark: var(--lightness-800);
+    --lightness-default: var(--lightness-500);
+    --lightness-light: var(--lightness-300);
+    --lightness-subtle: var(--lightness-50);
+
+    /*raw strings -- base*/
+    --saturation-base: 5%;
+
+    --hsl-base-950: var(--hue-primary) var(--saturation-base) 2%;
+    --hsl-base-900: var(--hue-primary) var(--saturation-base) 5%;
+    --hsl-base-800: var(--hue-primary) var(--saturation-base) 10%;
+    --hsl-base-700: var(--hue-primary) var(--saturation-base) 15%;
+    --hsl-base-600: var(--hue-primary) var(--saturation-base) 27%;
+    --hsl-base-500: var(--hue-primary) var(--saturation-base) 39%;
+    --hsl-base-400: var(--hue-primary) var(--saturation-base) 51%;
+    --hsl-base-300: var(--hue-primary) var(--saturation-base) 64%;
+    --hsl-base-200: var(--hue-primary) var(--saturation-base) 76%;
+    --hsl-base-100: var(--hue-primary) var(--saturation-base) 88%;
+    --hsl-base-50: var(--hue-primary) var(--saturation-base) 94%;
+
+    /*raw strings -- primary, secondary, tertiary & greyscale*/
+    --hsl-primary-dark: var(--hue-primary) var(--saturation-primary) var(--lightness-dark);
+    --hsl-primary: var(--hue-primary) var(--saturation-primary) var(--lightness-default);
+    --hsl-primary-light: var(--hue-primary) var(--saturation-primary) var(--lightness-light);
+    --hsl-primary-subtle: var(--hue-primary) var(--saturation-primary) var(--lightness-subtle);
+    
+    --hsl-secondary-dark: var(--hue-secondary) var(--saturation-secondary) var(--lightness-dark);
+    --hsl-secondary: var(--hue-secondary) var(--saturation-secondary) var(--lightness-default);
+    --hsl-secondary-light: var(--hue-secondary) var(--saturation-secondary) var(--lightness-light);
+    --hsl-secondary-subtle: var(--hue-secondary) var(--saturation-secondary) var(--lightness-subtle);
+
+    --hsl-tertiary-dark: var(--hue-tertiary) var(--saturation-tertiary) var(--lightness-dark);
+    --hsl-tertiary: var(--hue-tertiary) var(--saturation-tertiary) var(--lightness-default);
+    --hsl-tertiary-light: var(--hue-tertiary) var(--saturation-tertiary) var(--lightness-light);
+    --hsl-tertiary-subtle: var(--hue-tertiary) var(--saturation-tertiary) var(--lightness-subtle);
+
+    /*finished color variables*/
+    --clr-primary-dark: hsl(var(--hsl-primary-dark));
+    --clr-primary: hsl(var(--hsl-primary));
+    --clr-primary-light: hsl(var(--hsl-primary-light));
+    --clr-primary-subtle: hsl(var(--hsl-primary-subtle));
+    
+    --clr-secondary-dark: hsl(var(--hsl-secondary-dark));
+    --clr-secondary: hsl(var(--hsl-secondary));
+    --clr-secondary-light: hsl(var(--hsl-secondary-light));
+    --clr-secondary-subtle: hsl(var(--hsl-secondary-subtle));
+
+    --clr-tertiary-dark: hsl(var(--hsl-tertiary-dark));
+    --clr-tertiary: hsl(var(--hsl-tertiary));
+    --clr-tertiary-light: hsl(var(--hsl-tertiary-light));
+    --clr-tertiary-subtle: hsl(var(--hsl-tertiary-subtle));
+
+    --clr-base: hsl(var(--hsl-base-950));
+    --clr-base-light: hsl(var(--hsl-base-900));
+
+    --clr-text: hsl(var(--hsl-base-100));
+    --clr-text-light: hsl(var(--hsl-base-50));
+   
+    /*contextual color variables*/
+    --clr-border-light-gradient: linear-gradient(to right, hsl(var(--hsl-base-200) / 60%) -40%, transparent);    
+    --clr-divider: color-mix(in oklab, hsl(from var(--clr-primary-dark) h 25% l / 50%) 29%, hsl(var(--hsl-base-300) / 40%));
+    --clr-focus: hsl(from var(--clr-primary) h s var(--lightness-700));
+
+    /*LETTER SPACING*/
+    --ls-loose: .1025em;
+	
+	/*TRANSITIONS*/
+	--transition-very-fast: .15s;
+	--transition-fast: .21s;
+	--transition-medium: .4s;
+	--transition-slow: .55s;
+	--transition-very-slow: .8s;
+
+    --transition-link: var(--transition-fast);
+
+    /*BOX SHADOW*/
+    --box-shadow: 0 4px 40px 0 hsl(0 0% 0% / 6%);
+  
+	/*MISCELLANEOUS*/
+    --border-light-gradient: 1px solid;
+    --width-slide-tuner-slide: 1.5px;
+    --bg-slide-tuner-slide: hsl(var(--hsl-base-50) / 10%);
+    --top-pos-sticky: 2.5%;
+    --box-shadow-divider: 0 0 10px 1px hsl(var(--hsl-base-300) / 30%);
+    --outline-focus: 2px solid;
+    --outline-offset-focus: .4em;
+}

@@ -1,0 +1,45 @@
+/*GLOBAL STYLES: ELEMENTS*/
+
+body {
+    background-color: var(--clr-base);
+    font-family: var(--ff-text);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    line-height: calc(2ex + 12px);
+	letter-spacing: calc(.025ch + .45px);
+    color: var(--clr-text);
+}
+
+main {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+a {
+    transition-duration: var(--transition-link);
+}
+
+/*==================================================================*/
+
+/*GLOBAL STYLES: PSEUDO SELECTORS*/
+
+/*set focus to primary color*/
+*:where(:not(.nav--header ul li a)):focus-visible {
+	outline: var(--outline-focus);
+    outline-color: var(--clr-focus);
+	outline-offset: var(--outline-offset-focus);
+}
+
+/*text selection*/
+::selection {
+	background-color: var(--clr-primary-dark);
+	color: var(--clr-text-light);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+        navigation: auto;
+    }
+}

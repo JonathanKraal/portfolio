@@ -1,0 +1,100 @@
+/*box sizing rules*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+    font-size: 62.5%; /*1rem = 10px*/
+    interpolate-size: allow-keywords;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/*improve text rendering on MacOS computers*/
+body {
+    min-block-size: 100vh;
+	-webkit-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
+}
+
+:target {
+    scroll-margin-block: 5rlh;
+}
+
+:is(ul, ol)[class] {
+    list-style: none;
+}
+
+/*<a> elements that don't have a class get default styles */
+a:not([class]) {
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
+}
+
+/*make images easier to work with*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-inline-size: 100%;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+/*reset form elements*/
+label,
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+td,
+math,
+time {
+    font-variant-numeric: tabular-nums lining-nums;
+}
+
+hr {
+	border: none;
+}
+
+/*remove all animations, transitions and smooth scroll for people that prefer not to see them*/
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

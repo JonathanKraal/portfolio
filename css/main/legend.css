@@ -1,0 +1,45 @@
+/* || ORGANISATION OF FOLDERS
+
+	-Uncategorized: default folder for the OxyNinja framework
+	-Website-Wonders-Utility-Classes: custom made utility classes
+	-Main: global resets, custom properties and styles that apply globally
+	-Layout: big reusable areas that paint the larger picture of the webpage
+	-Pages: non-reusable page specific styling, single templates, archive templates
+	-Components: reusable blocks
+
+*/
+
+/*==================================================================*/
+
+/* || ORGANIZATION OF CSS PROPERTIES
+
+	0. Exception: content
+	1. Display rules (like flex, flex-basis, grid-templates etc)
+	2. Positioning rules (like fixed, inset, z-index etc)
+	3. Box-model rules (width, height, padding, background, border etc)
+	4. Typography rules (font-family, text-transform, white-space, text-align etc)
+	5. Manipulation rules (transform, animation, opacity, filter etc)
+	6. Miscellaneous rules (cursor, overflow, pointer-events, clip-path etc)
+
+*/
+
+/*==================================================================*/
+
+/* || NAMING CONVENTION FOR CLASSES
+
+	-Sections
+        --For utility classes: '.section--[modifier]'
+        --For custom classes: '.[block-name]-section'
+	-Wrappers of (multiple) blocks
+        --For generic outer wrappers: '.[block-name]-wrapper'
+        --For generic inner wrappers: '.[block-name]-inner'
+        --For wrappers used to query container properties: '.[block-name]-container'
+    -Blocks (BEM methodology)
+        --For blocks: '[block-name]'
+        --For elements: '[block-name]__[element-name]'
+        --For modifiers: '[block-name]--[modifier]'
+    -Utility classes
+        --'[property-name]--[modifier]' (longer property names could be abbreviated)
+	-Lists
+
+*/

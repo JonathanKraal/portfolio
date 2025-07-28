@@ -1,0 +1,70 @@
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--ff-display);
+	font-weight: var(--fw-bold);
+    line-height: calc(8px + 2ex);
+    letter-spacing: .06em;
+    color: var(--clr-text-light);
+    text-wrap: balance;
+}
+
+h1,
+.h1 {
+    max-inline-size: 21ch;
+    font-size: var(--fs-h1);
+    color: var(--clr-text-light); /*override the gradient h2 color, enabling you to use the <h1> styles on an <h2>*/
+}
+
+h2,
+.h2 {
+    display: inline-block;
+    max-inline-size: 30ch;
+    background-image: linear-gradient(to right, var(--clr-text-light) 40%, var(--clr-text-light) 50%, hsl(var(--hue-primary) var(--saturation-base) var(--lightness-600)));
+    -webkit-background-clip: text;
+    font-size: var(--fs-h2);
+    color: transparent;
+}
+
+.section-inner:not([class*="grid"]) > :where(h2, .h2) {
+    margin-block-end: calc(var(--space-3xl) * 1.25);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+h4 {
+    font-size: var(--fs-h4);
+}
+
+p,
+a,
+blockquote,
+figcaption {
+	max-inline-size: 75ch;
+    text-wrap: pretty;
+}
+
+p {
+    font-size: var(--fs-body);
+}
+
+a, button {
+	transition-duration: var(--transition-medium);
+}
+
+a {
+    color: var(--clr-text-light);
+}
+
+dt,
+dd {    
+    display: inline;
+}
+
+dt,
+strong {
+    font-weight: var(--fw-black);
+}
