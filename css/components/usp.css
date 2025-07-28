@@ -1,0 +1,84 @@
+.usp-wrapper {
+    --gap: var(--space-3xl);
+
+    grid-column: content-narrow-start 2 / content-wide-end;
+    justify-items: end;
+    counter-reset: step;
+
+    @media (max-width: 1000px) {
+        grid-column: content-wide-start / content-wide-end;
+        justify-items: center;
+    }
+}
+
+.usp-card {
+    display: grid;
+    gap: var(--content-gap);
+    align-content: start;
+    justify-items: center;
+    position: relative;
+    inline-size: 100%;
+    max-inline-size: 35ch;
+    padding: var(--space-xl) var(--space-l);
+    background-image: linear-gradient(hsl(var(--hsl-base-800)) 17%, hsl(var(--hsl-base-950)));
+    font-size: var(--fs-body); /*set to default font-size, because its section needs a larger font-size*/
+    text-align: center;
+    counter-increment: step;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 1.25rem;
+        border: var(--border-light-gradient);
+        border-image-source: linear-gradient(to bottom, color-mix(in oklab, hsl(var(--hsl-primary-dark) / 70%) 30%, hsl(var(--hsl-base-400) / 50%)), transparent);
+        border-image-slice: 1;
+        pointer-events: none;
+    }
+}
+
+.usp-card__heading {
+    font-size: var(--fs-body-large);
+    font-weight: var(--fw-bold);
+}
+
+.usp-card__description {
+    font-weight: var(--fw-regular);
+}
+
+.usp-card__svg {
+    order: -1;
+    inline-size: clamp(3.85rem, calc(3.85rem + ((1vw - 0.38rem) * 1.5556)), 5.25rem);
+    aspect-ratio: 1;
+
+    path {
+        fill: var(--clr-primary);
+    }
+}
+
+/*==============================================================*/
+
+/* || OL MODIFIER */
+
+.ol::after {
+    content: counter(step);
+    position: absolute;
+    inset-block-start: 100%;
+    padding: var(--_usp-counter-pad-block) 5ch;
+    border: var(--border-light-gradient);
+    border-image-source: var(--clr-border-light-gradient);
+    border-image-slice: 1;
+    background-image: linear-gradient(to right, hsl(var(--hsl-base-800)), transparent, hsl(var(--hsl-base-800)));
+    background-size: 200%;
+    font-size: var(--fs-body-large);
+    font-weight: var(--fw-black);
+    animation: border-gradient linear forwards;
+    animation-timeline: view();
+    animation-range: 20% 80%;
+}
+
+@keyframes border-gradient {
+    to {
+        border-image-source: linear-gradient(to right, transparent 10%, transparent, hsl(var(--hsl-base-200) / 60%));
+        background-size: -200%;
+    }
+}

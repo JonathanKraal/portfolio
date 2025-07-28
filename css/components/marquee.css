@@ -1,0 +1,72 @@
+.marquee {
+    --_time-for-each-item: 5s; /*how long it takes for 1 item to be on the screen before the next one comes in*/
+    --_amount-of-items: 6;
+    --_lap-time: calc(var(--_time-for-each-item) * var(--_amount-of-items));
+    --_item-repsonsive-offset: 100vw;
+    --_marquee-bg-color: var(--hue-primary) var(--saturation-primary) var(--lightness-950);
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-block: var(--section-space);
+    background-image: linear-gradient(to left, hsl(var(--_marquee-bg-color) / 10%), hsl(var(--_marquee-bg-color)));
+    
+    @media (prefers-reduced-motion: no-preference) {
+        mask-image: linear-gradient(to right, rgb(0 0 0 / 0), rgb(0 0 0) 15%, rgb(0 0 0) 85%, rgb(0 0 0 / 0));
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        flex-wrap: wrap;
+        gap: var(--content-gap);
+        padding-inline: var(--_gutter);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee--tools {
+        align-items: stretch;
+    }
+}
+
+.marquee__item {
+    @media (prefers-reduced-motion: no-preference) {
+        position: absolute;
+        inset-inline-start: calc(100% + 100rem);
+        animation: scroll-to-left var(--_lap-time) calc(((var(--_lap-time) * var(--_i) / var(--_amount-of-items))) * -1) linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        flex: 1;
+        padding: var(--space-m);
+        background-color: hsl(var(--hsl-base-400) / 7.5%);
+    }
+}
+
+.marquee--tools img {
+    max-inline-size: var(--_img-max-width, clamp(15rem, 15vw, 27rem));
+    block-size: 100%;
+    max-block-size: 17rem;
+    object-fit: contain;
+    mix-blend-mode: luminosity;
+
+    @media (prefers-reduced-motion: reduce) {
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .marquee {
+        --_time-for-each-item: 4s;
+        --_item-repsonsive-offset: 100vmax;
+    }
+
+    .marquee--tools img {
+        --_img-max-width: 14rem;
+    }
+}
+
+@keyframes scroll-to-left {
+    to {
+        inset-inline-start: calc(var(--_item-repsonsive-offset) / var(--_amount-of-items) * -1); /*push the item outside of the container before starting the animation again*/
+    }
+}

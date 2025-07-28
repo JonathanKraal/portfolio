@@ -1,0 +1,72 @@
+.portfolio-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--content-gap);
+    position: relative;
+    inline-size: fit-content;
+    margin: 0 0 calc(var(--content-gap) * 2.5);
+    padding: 0 var(--space-s) var(--content-gap);
+    border: none;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: auto 0 0 0;
+        block-size: 1px;
+        background-color: var(--clr-divider);
+        box-shadow: var(--box-shadow-divider);
+    }
+
+    legend {
+        display: none;
+    }
+
+    :where(input:hover, input:checked) + .portfolio-filter__button {
+        outline: 1px solid hsl(var(--hsl-base-300) / 60%);
+        box-shadow: inset 0 -3px 6px 5px color-mix(in oklab, hsl(var(--hsl-base-900) / 90%), var(--clr-primary) 20%);
+    }
+
+    input:focus-visible + .portfolio-filter__button {
+        outline: var(--outline-focus);
+        outline-color: var(--clr-focus);
+        outline-offset: var(--outline-offset-focus);
+    }
+
+    input:checked + .portfolio-filter__button::before {
+        content: '';
+        position: absolute;
+        inset: auto 0 0 auto;
+        inline-size: 22px;
+        aspect-ratio: 1;
+        background-color: color-mix(in oklab, hsl(from var(--clr-primary) h s var(--lightness-500)) 10%, hsl(var(--hsl-base-700)));
+        rotate: 45deg;
+        translate: 50% 50%;
+    }
+}
+
+.portfolio-filter__button {
+    position: relative;
+    padding: .4lh var(--space-s);
+    outline: 1px solid hsl(var(--hsl-base-500) / 40%);
+    background-image: linear-gradient(to bottom, color-mix(in oklab, hsl(var(--hsl-base-500) / 30%), var(--clr-primary) 5%) 15%, transparent);
+    overflow: clip;
+    transition: all var(--transition-fast) ease-in-out;
+    cursor: pointer;
+}
+
+/*filter functionality*/
+.portfolio-section:not(:has(#template:checked)) li:has([data-template]) {
+    display: none;
+    position: absolute;
+}
+
+.portfolio-section:not(:has(#custom:checked)) li:has([data-custom]) {
+    display: none;
+    position: absolute;
+}
+
+.portfolio-section.portfolio-section:has(#all:checked) li {
+    display: flex;
+    position: static;
+}

@@ -1,0 +1,40 @@
+.scale-step {
+    inline-size: var(--_scale-step-size);
+    aspect-ratio: var(--_scale-step-ratio);
+    border: 2px solid var(--_scale-step-border-clr);
+    border-radius: 2px;
+    background-color: var(--_scale-step-active-clr, var(--_scale-step-default-clr));
+    box-shadow: 0 0 var(--_scale-step-shadow-blur) -1px var(--_scale-step-shadow-clr),
+                inset 0 0 var(--_scale-step-shadow-blur) -3px var(--_bool, var(--_scale-step-shadow-clr));
+}
+
+/*active states*/
+[data-language-level="1"] > :nth-of-type(1) {
+    --_scale-step-active-clr: var(--_scale-step-progress-clr);
+    --_scale-step-shadow-clr: var(--_scale-step-shadow-clr-active);
+    --_scale-step-border-clr: var(--_scale-step-border-clr-active);
+}
+
+[data-language-level="2"] > :nth-of-type(-n + 2) {
+    --_scale-step-active-clr: var(--_scale-step-progress-clr);
+    --_scale-step-shadow-clr: var(--_scale-step-shadow-clr-active);
+    --_scale-step-border-clr: var(--_scale-step-border-clr-active);
+}
+
+[data-language-level="3"] > :nth-of-type(-n + 3) {
+    --_scale-step-active-clr: var(--_scale-step-progress-clr);
+    --_scale-step-shadow-clr: var(--_scale-step-shadow-clr-active);
+    --_scale-step-border-clr: var(--_scale-step-border-clr-active);
+}
+
+[data-language-level="4"] > :nth-of-type(-n + 4) {
+    --_scale-step-active-clr: var(--_scale-step-progress-clr);
+    --_scale-step-shadow-clr: var(--_scale-step-shadow-clr-active);
+    --_scale-step-border-clr: var(--_scale-step-border-clr-active);
+}
+
+[data-language-level="5"] > :nth-of-type(-n + 5) {
+    --_scale-step-active-clr: var(--_scale-step-progress-clr);
+    --_scale-step-shadow-clr: var(--_scale-step-shadow-clr-active);
+    --_scale-step-border-clr: var(--_scale-step-border-clr-active);
+}

@@ -1,0 +1,125 @@
+/*LEGEND
+
+    The .grid--2-col and .grid--2-col--img-left classes are made to be auto alternating. Useful when used inside a query loop where the classes cannot be swapped manually.
+	
+	1. The website consist of 3 different 2-column layouts so 3 classes are available:
+
+	-grid--2-col: default class transforming a container into a responsive 2 column grid containing 2 equal width columns
+	-grid--2-col--uneven: modifier class transforming a container into a responsive 2 column grid where one column is slightly larger than the other
+	-grid--2-col--img-left: flips the position of the image while the order of the DOM elements remains
+
+    2. Use data attributes for a specific grid you want to change a single property of, such as removing the max height on the image or changing the gap.
+
+    -[data-stretch]: set the alignment of the items in the grid to stretch
+    -[data-unset]: reset the max-height of the img to be 100% (instead of a fixed height)
+    -[data-no-gap]: remove the gap in the grid
+    -[data-no-ar]: remove the aspect-ratio, useful for instance when the content of the <figure> is not stretched inside its container, for it can leave unwanted whitespace
+
+*/
+
+/*==================================================================*/
+
+/* || DEFAULT GRID */
+
+.grid--2-col {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-l) var(--grid-gap-2-col);
+    inline-size: 100%;
+}
+
+.grid--2-col:not(:last-of-type) {
+	margin-block-end: var(--space-2xl);
+}
+
+.grid--2-col > :first-child {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-m);
+}
+
+/*auto alternating*/
+@media (min-width: 1050px) { /*use the .grid--2-col breakpoint*/
+    .grid--2-col:nth-of-type(even) > :last-child {
+    	order: -1;
+    }
+}
+
+.grid--2-col img {
+    max-block-size: 70rem;
+}
+
+/*==================================================================*/
+
+/* || MODIFIER IMG LEFT */
+
+@media (min-width: 1050px) { /*use the .grid--2-col breakpoint*/
+    .grid--2-col--img-left:nth-of-type(odd) > :last-child {
+    	order: -1;
+    }
+}
+
+/*==================================================================*/
+
+/* || MODIFIER UNEVEN */
+
+.grid--2-col--uneven {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+}
+
+.grid--2-col--uneven.grid--2-col--img-left {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+}
+
+/*==================================================================*/
+
+/* || DATA MODIFIERS */
+
+/*stretch content and image together*/
+.grid--2-col[data-stretch] {
+    align-items: stretch;
+}
+
+/*make image as small or large as the content next to it*/
+@media (min-width: 725px) {
+    .grid--2-col[data-stretch] >:last-child {
+        aspect-ratio: 1.3 / 1;
+        max-inline-size: 100%;
+    }
+}
+
+/*remove max height from image*/
+.grid--2-col:is([data-stretch], [data-unset]) img {
+    max-block-size: 100%;
+}
+
+/*remove the gap*/
+.grid--2-col[data-no-gap] {
+    gap: 0;
+}
+
+/*remove the aspect ratio*/
+.grid--2-col[data-no-ar] > :last-child {
+    aspect-ratio: unset;
+}
+
+/*==================================================================*/
+
+/* || RESPONSIVE */
+
+/*Seeing that breakpoint values can't be tokenized in vanilla CSS, copy-pasting breakpoints is the only option for reusing the same breakpoint accross mulitple stylesheets. 
+
+Breakpoint also used for:
+  -.grid--hero-home in stylesheet: 'Hero'
+  -.rating-card in stylesheet: 'Rating-Card'
+  -.review-figure-headshot-wrapper in stylesheet: 'Review'
+*/
+
+@media (max-width: 1050px) {
+	.grid--2-col,
+    .grid--2-col--uneven,
+    .grid--2-col--uneven.grid--2-col--img-left {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}

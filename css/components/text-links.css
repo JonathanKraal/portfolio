@@ -1,0 +1,49 @@
+.text-link,
+.footer__nav ul li a {
+	text-decoration: underline 1px solid;
+    text-underline-offset: 11px;
+    text-decoration-color: transparent;
+    text-decoration-skip-ink: none;
+    transition: text-underline-offset var(--transition-medium) ease, text-decoration-color var(--transition-medium) ease-out;
+}
+
+.text-link--no-underline {
+    text-decoration: none;
+    transition: color var(--transition-medium);
+}
+
+@media (hover: hover) {
+	.text-link:hover,
+    .footer__nav ul li a:hover {
+        text-underline-offset: 4px;
+        text-decoration-color: currentcolor;
+    }
+
+    .text-link--no-underline:hover {
+        color: var(--clr-text-visited);
+    }
+}
+
+@media (hover: none) {
+	.text-link:focus,
+    .footer__nav ul li a:focus {
+        color: var(--clr-primary);
+    }
+}
+
+.text-link:visited {
+    color: var(--clr-text-visited);
+}
+
+.text-link[download] {
+    position: relative;
+}
+
+.text-link[download]::after {
+    content: '\2913';
+    position: absolute;
+    inset-block-start: -2px;
+    margin-inline-start: .4ch;
+    font-size: .9em;
+    line-height: 1;
+}

@@ -1,0 +1,207 @@
+/* || TOOL CARD */
+
+.skills__tool {
+    --_skills-tool-hover-shadow-clr: color-mix(in xyz, hsl(from var(--_parent-clr) h s var(--lightness-900)) 26%, hsl(var(--hsl-base-700) / 100%));
+    --_skills-tool-shadow-transition-dur: var(--transition-very-slow);
+    --_skills-tool-bg-alpha: 5%;
+
+    --_scale-step-size: 1.75rem;
+    --_scale-step-ratio: 1 / 4;
+    --_scale-step-border-clr-active: hsl(from var(--_parent-clr) h s var(--lightness-500) / 87.5%);
+    --_scale-step-shadow-clr-active: hsl(from var(--_parent-clr) h s var(--lightness-400));
+    --_scale-step-shadow-blur: .5em;
+    --_scale-step-shadow-blur-active: .725em;
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: calc(var(--content-gap) * 1.5);
+    position: relative;
+    z-index: 1;
+    inline-size: 100%;
+    max-inline-size: 40rem;
+    padding: var(--space-l);
+    color: var(--_skills-tool-hover-shadow-clr);
+    transition: box-shadow var(--_skills-tool-shadow-transition-dur) cubic-bezier(.49,1.59,.83,.67), 
+                color var(--transition-slow) calc(var(--_skills-tool-shadow-transition-dur) / 2.5), 
+                translate calc(var(--_skills-tool-shadow-transition-dur) / 3);
+    
+    @media (prefers-reduced-motion: no-preference) {
+        box-shadow: 0 0 6px var(--_skills-tool-hover-shadow-spread, 0);
+    }
+    
+    &::before {
+        --_skills-tool-shadow-alpha: 50%;
+
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-color: hsl(from var(--_parent-clr) h s var(--lightness-dark) / var(--_skills-tool-bg-alpha));
+        box-shadow: inset 0 0 .8em 0 hsl(from var(--_parent-clr) h s var(--lightness-400) / var(--_skills-tool-shadow-alpha));
+        backdrop-filter: blur(4px);
+        transition-duration: calc(var(--_skills-tool-shadow-transition-dur) / 2);
+    }
+
+    &:hover,
+    &:focus-within {
+        --_skills-tool-hover-shadow-spread: 22.5px;
+        --_skills-tool-hover-shadow-clr: color-mix(in xyz, hsl(from var(--_parent-clr) h s var(--lightness-900)) 0%, hsl(var(--hsl-base-700) / 0%));
+
+        @media (prefers-reduced-motion: no-preference) {
+            translate: 0 -2px;
+        }
+    }
+
+    &:active {
+        translate: 0 0;
+        transition-duration: .1s;
+    }
+
+    &:hover::before,
+    &:focus-within::before {
+        --_skills-tool-shadow-alpha: 92.5%;
+        --_skills-tool-bg-alpha: 15%;
+    }
+
+    &:active::before {
+        --_skills-tool-bg-alpha: 5%;
+
+        transition-duration: .1s;
+    }
+
+    [data-language-level="1"] > :nth-of-type(1) {
+        --_scale-step-shadow-clr: var(--_scale-step-shadow-clr-active);
+        --_scale-step-shadow-blur: var(--_scale-step-shadow-blur-active);
+    }
+    
+    [data-language-level="2"] > :nth-of-type(-n + 2) {
+        --_scale-step-shadow-clr: var(--_scale-step-shadow-clr-active);
+        --_scale-step-shadow-blur: var(--_scale-step-shadow-blur-active);
+    }
+    
+    [data-language-level="3"] > :nth-of-type(-n + 3) {
+        --_scale-step-shadow-clr: var(--_scale-step-shadow-clr-active);
+        --_scale-step-shadow-blur: var(--_scale-step-shadow-blur-active);
+    }
+    
+    [data-language-level="4"] > :nth-of-type(-n + 4) {
+        --_scale-step-shadow-clr: var(--_scale-step-shadow-clr-active);
+        --_scale-step-shadow-blur: var(--_scale-step-shadow-blur-active);
+    }
+    
+    [data-language-level="5"] > :nth-of-type(-n + 5) {
+        --_scale-step-shadow-clr: var(--_scale-step-shadow-clr-active);
+        --_scale-step-shadow-blur: var(--_scale-step-shadow-blur-active);
+    }
+}
+
+.skills__figure--front-end,
+.skills__figure--back-end,
+.skills__figure--performance {    
+    --_badge-clr: var(--_parent-clr);
+    --clr-focus: var(--_parent-clr);
+    --_scale-step-default-clr: color-mix(in oklab, hsl(from var(--_parent-clr) h s var(--lightness-400)) 15%, hsl(var(--hsl-base-950)));
+    --_scale-step-progress-clr: hsl(from var(--_parent-clr) h 50% var(--lightness-100));
+    --_scale-step-border-clr: color-mix(in xyz, hsl(from var(--_parent-clr) h s var(--lightness-300)) 75%, hsl(var(--hsl-base-600)));
+    --_scale-step-shadow-clr: hsl(from var(--_parent-clr) h s var(--lightness-300) / 75%);
+}
+
+.skills__tool-body {
+    display: grid;
+    justify-items: center;
+    gap: var(--space-m);
+    margin-block-start: auto;
+}
+
+.skills__tool-name {
+    font-weight: var(--fw-regular);
+    text-align: center;
+}
+
+.skills__tool-logo {
+    block-size: 4.5rem;
+    max-inline-size: 14rem;
+    object-fit: contain;
+}
+
+.skills__tool-battery {
+    --_battery-positive-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1.5ex;
+    position: relative;
+    padding: 1.25ex 1.75ex;
+    max-inline-size: 75%;
+    margin-inline-end: var(--_battery-positive-size); /*push battery back to center it*/
+    background-color: var(--clr-base);
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset-inline-start: 100%;
+        inline-size: var(--_battery-positive-size);
+        aspect-ratio: 1 / 4;
+        background-color: inherit;
+    }
+}
+
+.skills__tool-footer {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-s);
+}
+
+.skills__tool-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    cursor: pointer !important;
+    display: flex;
+    z-index: 1;
+}
+
+.skills__tool-icon {
+    inline-size: 3rem;
+    aspect-ratio: 1;
+
+    g {
+        fill: currentColor;
+    }
+}
+
+.skills__tool-watermark {
+    --_watermark-right-offset: 8%;
+
+    position: absolute;
+    inset: 50% 8% auto auto;
+    width: min(140rem, 100%);
+    translate: 0 -50%;
+    clip-path: polygon(0 0, 97% 0, 97% 100%, 0% 100%); /*remove cut off square from image*/
+    
+    @media (prefers-reduced-motion: no-preference) {
+        animation: skills-watermark-rotation linear forwards;
+        animation-timeline: view();
+        animation-range: -50% 100%;
+    }
+
+    @media (max-width: 1400px) {
+        --_watermark-right-offset: 0;
+    }
+}
+
+@keyframes skills-watermark-rotation {
+    40% {
+        scale: .65;
+        translate: -15% -57.5%;
+    }
+
+    100% {
+        scale: 1.55;
+        translate: 15% -50%;
+        rotate: 100deg;
+    }
+}

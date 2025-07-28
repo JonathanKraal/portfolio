@@ -1,0 +1,195 @@
+/* || GRID & ITEM PLACEMENT */
+
+.grid--value {
+    display: grid;
+    grid-template-columns: var(--space-xl) repeat(7, 1fr);
+    grid-template-rows: repeat(5, auto);
+    row-gap: var(--grid-gap);
+    position: relative;
+    isolation: isolate;
+
+    h2 {
+        grid-column: 2 / -2;
+        grid-row: 1;
+        max-inline-size: 17ch;
+        text-wrap: initial;
+    }
+
+    .values {
+        --_card-offset: 4rem;
+        --_card-offset-incrementor: 4rem;
+
+        display: contents;
+    }
+
+    .card:where(:nth-of-type(1)) {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        margin-inline-start: var(--_card-offset);
+    }
+
+    .card:where(:nth-of-type(2)) {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        margin-inline-start: calc(var(--_card-offset) + var(--_card-offset-incrementor));
+    }
+
+    .card:where(:nth-of-type(3)) {
+        grid-column: 1 / -1;
+        grid-row: 4;
+        margin-inline-start: calc(var(--_card-offset) + var(--_card-offset-incrementor) * 2);
+    }
+
+    .card:where(:nth-of-type(4)) {
+        grid-column: 1 / -1;
+        grid-row: 5;
+    }
+
+    img {
+        grid-column: 1 / -1;
+        grid-row: 2 / 5;
+        justify-self: end;
+        aspect-ratio: 7 / 8;
+        z-index: -1;
+        max-block-size: 72rem;
+        
+        @media (max-width: 1275px) {
+            margin-block-start: 5cap;
+        }
+    }
+
+    > .slide-tuner {
+        --_slide-height: clamp(27rem, 60vw, 55rem);
+
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        translate: 0 -50%;
+    }
+
+    @media (max-width: 750px) {
+        grid-template-columns: var(--space-xl) 1fr;
+
+        .card {
+            margin-inline-start: var(--_card-offset);
+        }
+
+        img {
+            margin-block-start: 10cap;
+            margin-inline-end: -9rem;
+        }
+    }
+
+    @media (max-width: 450px) {
+        position: static;
+
+        .card {
+            margin-inline-start: 0;
+        }
+    }
+
+    @media (min-width: 1100px) {
+        grid-template-columns: var(--space-2xl) repeat(8, 1fr) minmax(20rem, 1fr);
+
+        .card:nth-of-type(1) {
+            grid-column: 3 / -1;
+        }
+    
+        .card:nth-of-type(2) {
+            grid-column: 5 / -1;
+        }
+    
+        .card:nth-of-type(3) {
+            grid-column: 4 / -1;
+        }
+    
+        .card:nth-of-type(4) {
+            grid-column: 2 / -1;
+        }
+
+        img {
+            grid-row: 1 / 4;
+        }
+    }
+}
+
+/*==============================================================*/
+
+/* || VALUE CARD STYLES */
+
+.card--value {
+    max-inline-size: 67rem;
+}
+
+.card--value::before,
+.card--value:nth-of-type(1)::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: hsl(from var(--clr-primary) h var(--_card-value-dec-saturation) var(--lightness-900) / 65%);
+    animation: card-value-dec-color linear forwards;
+    animation-timeline: view();
+    animation-range: 5% 85%;
+}
+
+.card--value:nth-of-type(1)::before {
+    inset: auto auto clamp(-5rem, -2vw, -2rem) clamp(-8rem, -4vw, -5rem);
+    inline-size: 35%;
+    aspect-ratio: 4 / 3;
+}
+
+.card--value:nth-of-type(1)::after {
+    inset: auto 3rem -9rem auto;
+    inline-size: 15%;
+    aspect-ratio: 1;
+}
+
+.card--value:nth-of-type(2)::before {
+    inset: auto auto -11rem 1.5rem;
+    inline-size: 12.5%;
+    aspect-ratio: 1 / 3;    
+}
+
+.card--value:nth-of-type(3)::before {
+    inset: auto auto -14rem 4rem;
+    inline-size: 22.5%;
+    aspect-ratio: 1 / 2;
+
+    @media (max-width: 450px) {
+        content: none;
+    }
+}
+
+.card--value:nth-of-type(2),
+.card--value:nth-of-type(3) {
+    @media (max-width: 450px) {
+        &::before {
+            content: none;
+        }
+    }
+}
+
+.card--value:nth-of-type(1) {
+    @media (max-width: 450px) {
+        &::after {
+            content: none;
+        }
+    }
+}
+
+.card--value:nth-of-type(4)::before {
+    inset: auto auto clamp(-6rem, -7vw, -3rem) clamp(-9rem, -4vw, -5rem);
+    inline-size: 35%;
+    aspect-ratio: 5 / 4;
+}
+
+@property --_card-value-dec-saturation {
+    syntax: '<percentage>';
+    initial-value: 12.5%;
+    inherits: false;
+}
+
+@keyframes card-value-dec-color {
+    to {
+        --_card-value-dec-saturation: var(--saturation-primary);
+    }
+}

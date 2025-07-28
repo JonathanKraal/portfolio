@@ -1,0 +1,34 @@
+/* || ALL AUTO GRIDS */
+
+.grid--auto-2,
+.grid--auto-3,
+.grid--auto-4 {
+    display: grid;
+	align-items: stretch;
+	gap: calc(var(--grid-gap) * 1.65) var(--grid-gap);
+	inline-size: 100%;
+}
+
+/*==================================================================*/
+
+/* || GRID AUTO 2 */
+
+.grid--auto-2 {
+	grid-template-columns: repeat(auto-fit, minmax(min(46.5rem, 100%), 1fr));
+}
+
+/*==================================================================*/
+
+/* || GRID AUTO 4 */
+
+.grid--auto-3 {
+	grid-template-columns: repeat(auto-fit, minmax(min(34.5rem, 100%), 1fr));
+}
+
+/*==================================================================*/
+
+/* || GRID AUTO 4 */
+
+.grid--auto-4 {
+	grid-template-columns: repeat(auto-fit, minmax(min(30.5rem, 100%), 1fr));
+}

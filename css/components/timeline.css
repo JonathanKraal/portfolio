@@ -1,0 +1,242 @@
+.timeline {
+    --_slide-tuner-slide-bg-alpha: hsl(var(--hsl-base-50) / 95%);
+
+    display: grid;
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+    justify-items: center;
+    row-gap: var(--grid-gap);
+    position: relative;
+
+    .card:where(:nth-child(even)) {
+        .slide-tuner {
+            inset: 0 auto 0 calc(var(--width-slide-tuner-slide) / 2 * -1);
+        }
+    }
+
+    &::before {
+        content: '';
+        justify-self: center;
+        position: absolute;
+        inset-block: 1px;
+        inline-size: var(--width-slide-tuner-slide);
+        background-color: var(--bg-slide-tuner-slide);
+        background-image: linear-gradient(to bottom, var(--_slide-tuner-slide-bg-alpha) 0%, var(--_slide-tuner-slide-bg-alpha) var(--_timeline-line-color-percentage), var(--bg-slide-tuner-slide) 0%, var(--bg-slide-tuner-slide) 100%);
+        translate: -50% 0;
+        
+        @media (prefers-reduced-motion: no-preference) {
+            animation: timeline-line-color linear forwards;
+            animation-timeline: view();
+            animation-range: 5% 75%;
+        }
+    }    
+
+    @media (min-width: 1125px) {
+        grid-template-columns: 1fr min-content 1fr;
+        justify-items: stretch;
+
+        .card:where(:nth-child(odd)) {
+            grid-column: 1 / 3;
+        }
+    
+        .card:where(:nth-child(even)) {
+            grid-column: 2 / 4;
+        }
+
+        &::before {         
+            grid-column: 2 / 3;   
+            z-index: 2;
+        }
+    }
+}
+
+@property --_timeline-line-color-percentage {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: false;
+}
+
+@keyframes timeline-line-color {
+    to {
+        --_timeline-line-color-percentage: 100%;
+    }
+}
+
+.card--timeline {
+    --_card-padding: calc(var(--space-l) * 1.1) calc(var(--space-l) * 1.25);
+    --_card-bg-blur: 100vmax; /*make the line disappear behind the transparent background color of the card*/
+    --_decoration-bubbles-size: 5.5rem;
+
+    display: grid;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    z-index: 2;
+    background: transparent;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image: var(--_card-bg);
+    }
+    
+    @media (prefers-reduced-motion: no-preference) {
+        &:where(:nth-child(odd)) > *:not(.card__year, .slide-tuner) {
+            animation: timeline-card-entrance-odd linear both;
+        }
+    
+        &:where(:nth-child(even)) > *:not(.card__year, .slide-tuner) {
+            animation: timeline-card-entrance-even linear both;
+        }
+    
+        > *:not(.card__year, .slide-tuner),
+        &::before,
+        &::after {
+            animation-timeline: view();
+            animation-range: 10% 27.5%;
+        }
+    
+        &:where(:nth-child(odd)) {
+            translate: -2px 0; /*shift odd cards to the left so the timeline vertical line color change does not get blocked by the card on top of it*/
+    
+            .slide-tuner::before {
+                translate: calc(50% + 1px); /*shift the tuner back*/
+            }
+        }
+    
+        &:where(:nth-child(even)) .slide-tuner::before {
+            translate: calc(50% - 1px);
+        }
+    }
+
+    .card__title {
+        font-size: var(--fs-h4);
+
+        @media (max-width: 580px) {
+            font-size: var(--fs-body-large);
+            text-wrap: initial; /*allow for a visually better wrapping experience on mobile*/
+        }
+    }
+
+    .slide-tuner {
+        @media (prefers-reduced-motion: no-preference) {
+            --bg-slide-tuner-slide: transparent;
+        }
+
+        @media (max-width: 1125px) {
+            --_tuner-position: 0 50% auto auto;
+        }
+    }
+
+    @media (min-width: 580px) {
+        .card__data {
+            margin-inline-start: calc(var(--space-xl) * .8);
+        }
+    }
+
+    @media (min-width: 1125px) {
+        --_card-padding: calc(var(--space-l) * 1.2) calc(var(--space-xl) * 1.2 + .25lh); /*make sure that padding looks consistent on all sides until text-box-trim gets fully supported*/;
+        --_decoration-bubbles-size: 6rem;
+    }
+
+    .card__year {
+        --_year-offset: 150%;
+        --_year-arrow-dimesion: 13px;
+        --_year-arrow-clr: color-mix(in oklab, var(--clr-secondary) 45%, hsl(var(--hsl-base-600)));
+
+        position: absolute;
+        padding: calc(var(--space-s) * .8) calc(var(--space-s) * 1.1);
+        background-image: linear-gradient(var(--_card-gradient-direction, to left), var(--_year-arrow-clr), color-mix(in oklab, hsl(from var(--clr-secondary) h 35% var(--lightness-600)) 25%, hsl(var(--hsl-base-900))));
+        font-size: var(--fs-body-large);
+        letter-spacing: .15ch;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inline-size: 0;
+            block-size: 0;
+            border-block-start: var(--_year-arrow-dimesion) solid transparent;
+            border-block-end: var(--_year-arrow-dimesion) solid transparent;
+        }        
+
+        @media (max-width: 1125px) {
+            --_year-offset: -2.5rem;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset-block: auto -1.5rem;
+        inset-inline: -2.5rem auto;
+        inline-size: var(--_decoration-bubbles-size);
+        aspect-ratio: 1;
+        background-color: hsl(var(--hsl-primary-dark) / 45%);
+        /*order from largest to smallest*/
+        box-shadow: 1.9em -1.3em 0 -.2em hsl(var(--hsl-primary-dark) / 30%),
+                    3.35em 0.4em 0 -.7em hsl(var(--hsl-primary-dark) / 25%),
+                    .3em -4.1em 0 -.9em hsl(var(--hsl-primary-dark) / 18.5%),
+                    4.1em -3.6em 0 -1.2em hsl(var(--hsl-primary-dark) / 15.5%);
+    }
+    
+    &:where(:nth-child(odd)) {
+        .card__year {
+            --_card-gradient-direction: to right;
+
+            inset: auto var(--_year-offset) var(--_year-offset) auto;
+
+            &::before {
+                inset: 50% 100% auto auto;
+                border-inline-end: var(--_year-arrow-dimesion) solid var(--_year-arrow-clr);
+                translate: 1px -50%;
+            }
+            
+            @media (min-width: 1125px) {
+                inset: 50% 0 auto auto;
+                translate: var(--_year-offset) -50%;
+            }
+        }
+    }
+
+    &:where(:nth-child(even)) {
+        &::before {
+            inset-inline: auto -2.5rem;
+            transform: scaleX(-1);
+        }
+
+        .card__year {
+            inset: auto auto var(--_year-offset) var(--_year-offset);
+
+            &::before {
+                inset: 50% auto auto 100%;
+                border-inline-start: var(--_year-arrow-dimesion) solid var(--_year-arrow-clr);
+                translate: -1px -50%;
+            }
+            
+            @media (min-width: 1125px) {
+                inset: 50% auto auto 0;
+                translate: calc(var(--_year-offset) * -1) -50%;
+            }
+        }
+    }
+}
+
+@keyframes timeline-card-entrance-odd {
+    from {
+        translate: -5% 0;
+        scale: .95;
+        filter: blur(3px);
+        opacity: 0;
+    }
+}
+
+@keyframes timeline-card-entrance-even {
+    from {
+        translate: 5% 0;
+        scale: .95;
+        filter: blur(3px);
+        opacity: 0;
+    }
+}

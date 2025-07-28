@@ -1,0 +1,15 @@
+.badge {
+    padding: 1.1ex 0.95ch;
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    background-color: color-mix(in oklab, hsl(from var(--_badge-clr, var(--clr-primary)) h 62.5% var(--lightness-700)) 60%, hsl(var(--hsl-base-700)));
+    font-size: calc(var(--fs-body-small) - 1.5px);
+    line-height: 1;
+    color: var(--clr-text-light);
+}
+
+.my-class {
+    width: 7rem;
+    height: 19rem;
+    background-color: wheat;
+}

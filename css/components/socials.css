@@ -1,0 +1,6 @@
+.socials {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--space-m);
+    inline-size: fit-content;
+}

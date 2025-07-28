@@ -1,0 +1,199 @@
+/*==============================================================*/
+
+/* || ALL BUTTONS */
+
+.button,
+.button--small,
+.text-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--clr-text-light);
+    transition-duration: var(--transition-medium);
+}
+
+.button,
+.button--small {
+    --_btn-padding: .95em var(--space-xl);
+    --_btn-border: color-mix(in oklab, hsl(from var(--clr-primary) h calc(var(--saturation-primary) - 40%) var(--lightness-700)) 40%, hsl(var(--hsl-base-600)));
+    --_btn-bg: linear-gradient(135deg, transparent 40%, color-mix(in oklab, var(--clr-primary-dark) 20%, hsl(var(--hsl-base-100) / 45%)) 65%);
+    --_btn-outline-offset: 2px;
+    --_btn-border-grad-direction: 135deg;
+    --_btn-dec-dimension: 24px;
+
+    position: relative;
+    min-inline-size: 10rem;
+    padding: var(--_btn-padding);
+    background-image: var(--_btn-bg);
+    background-size: 215%;
+    border: 2px solid;
+    border-image-source: linear-gradient(var(--_btn-border-grad-direction), var(--_btn-border), transparent);
+    border-image-slice: 1;
+    text-align: center;
+    outline: 1px solid var(--_btn-outline-clr, transparent);
+    outline-offset: var(--_btn-outline-offset);
+    box-shadow: 0 0 0 0 transparent;
+    transition: all var(--transition-fast) ease-out;
+
+    &::before,
+    &::after {
+        --_btn-dec-border: 2px solid var(--_btn-decoration-clr);
+
+        content: '';
+        position: absolute;
+        width: var(--_btn-dec-dimension);
+        aspect-ratio: 5 / 3.75;
+        border: var(--_btn-dec-border);
+        background: var(--_btn-dec-bg, var(--clr-base-light));
+        transition: all var(--transition-medium) ease-out;
+
+        @media (prefers-reduced-motion: no-preference) {
+            box-shadow: var(--_btn-dec-offset-1-x, 0) var(--_btn-dec-offset-1-y, 0) 0 -.15em var(--_btn-dec-clr-1, transparent),
+                    var(--_btn-dec-offset-2-x, 0) var(--_btn-dec-offset-2-y, 0) 0 -.2em var(--_btn-dec-clr-2, transparent),
+                    var(--_btn-dec-offset-3-x, 0) var(--_btn-dec-offset-3-y, 0) 0 -.25em var(--_btn-dec-clr-3, transparent);
+        }
+    }
+
+    &::before {
+        --_btn-decoration-clr: color-mix(in oklab, hsl(from var(--clr-primary) h s var(--lightness-500)) 80%, hsl(var(--hsl-base-400)));
+    
+        inset: 0 0 auto auto;
+        translate: 50% -50%;
+    }
+
+    &::after {
+        --_btn-decoration-clr: color-mix(in oklab, hsl(from var(--clr-secondary) h s var(--lightness-500)) 80%, hsl(var(--hsl-base-400)));
+        
+        inset: auto auto 0 0;
+        translate: -50% 50%;
+    }
+
+    &:where(a):hover, /*exclude everything that visually looks like a button, but does not act like one*/
+    &:focus {
+        --_btn-outline-clr: hsl(var(--hsl-base-200) / 20%);
+    
+        background-size: 260%;
+        box-shadow: 0 0 2em -.5em hsl(var(--hsl-base-200) / 30%),
+                    inset 0 0 .7em -.175em hsl(var(--hsl-base-400));
+    }
+
+    &:where(a):active {
+        --_btn-bg: linear-gradient(135deg, transparent 50%, color-mix(in oklab, var(--clr-primary-dark) 20%, hsl(var(--hsl-base-400) / 45%)) 65%);
+        --_btn-outline-clr: color-mix(in oklab, var(--clr-primary) 15%, hsl(var(--hsl-base-200) / 50%));
+    
+        background-size: 150%;
+        transition-duration: 0s;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        &:where(a):hover::before,
+        &:where(a):hover::after,
+        &:focus::before,
+        &:focus::after {
+            --_btn-dec-dimension: 18px;
+        
+            aspect-ratio: 5 / 5;
+        }
+
+        &:where(a):hover::before,
+        &:focus::before {
+            --_btn-dec-offset-1-x: -1.45em;
+            --_btn-dec-offset-1-y: -.9em;
+            --_btn-dec-offset-2-x: 1.9em;
+            --_btn-dec-offset-2-y: -.15em;
+            --_btn-dec-offset-3-x: .6em;
+            --_btn-dec-offset-3-y: -1.3em;
+            --_btn-dec-clr-1: color-mix(in oklab, hsl(from hsl(var(--hsl-primary-dark)) h s var(--lightness-300) / 90%) 75%, var(--clr-primary));
+            --_btn-dec-clr-2: hsl(from hsl(var(--hsl-primary)) h s var(--lightness-500));
+            --_btn-dec-clr-3: hsl(var(--hsl-primary) / 35%);
+        
+            translate: -200% -50%;
+        }
+
+        &:where(a):hover::after,
+        &:focus::after {
+            --_btn-dec-offset-1-x: -1.45em;
+            --_btn-dec-offset-1-y: -.9em;
+            --_btn-dec-offset-2-x: 1.9em;
+            --_btn-dec-offset-2-y: .15em;
+            --_btn-dec-offset-3-x: .6em;
+            --_btn-dec-offset-3-y: 1.3em;
+            --_btn-dec-clr-1: color-mix(in oklab, hsl(from hsl(var(--hsl-secondary-dark)) h s var(--lightness-300) / 90%) 75%, var(--clr-primary));
+            --_btn-dec-clr-2: hsl(from hsl(var(--hsl-secondary)) h s var(--lightness-500));
+            --_btn-dec-clr-3: hsl(var(--hsl-secondary) / 35%);
+        
+            translate: 175% 50%;
+        }
+    }
+}
+
+/*select all text links (everything that is not a button or an anchor link wrapper)*/
+@supports (a:has(a)) {
+    a:not(:has(*), [class*="button"]) {
+        text-decoration: underline;
+    }
+}
+
+/*==============================================================*/
+
+/* || SMALL BUTTON */
+
+.button--small {
+    --_btn-padding: .65em var(--space-m);
+    --_btn-bg: hsl(from var(--clr-primary) h s var(--lightness-900));
+    --_btn-border: var(--clr-primary);
+    --_btn-border-grad-direction: -135deg;
+    --_btn-dec-dimension: 0;
+    --_btn-dec-bg: transparent;
+
+    position: relative;
+    min-inline-size: 10rem;
+    background-image: var(--_btn-bg);
+    border-image-slice: 1;
+    font-weight: var(--fw-bold);
+
+    &::before,
+    &::after {
+        --_btn-dec-border: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        &:hover::before {
+            --_btn-dec-offset-1-x: -0.45em;
+            --_btn-dec-offset-1-y: -.9em;
+            --_btn-dec-offset-2-x: 1.95em;
+            --_btn-dec-offset-2-y: 0.55em;
+            --_btn-dec-offset-3-x: 1.1em;
+            --_btn-dec-offset-3-y: -0.6em;
+        }
+    
+        &:hover::after {
+            --_btn-dec-offset-1-x: -1.55em;
+            --_btn-dec-offset-1-y: -0.6em;
+            --_btn-dec-offset-2-x: 0.8em;
+            --_btn-dec-offset-2-y: 0.15em;
+            --_btn-dec-offset-3-x: -0.4em;
+            --_btn-dec-offset-3-y: 1em;
+        }
+    }
+}
+
+/*==============================================================*/
+
+/* || SKIP TO MAIN */
+
+/*skip to main*/
+.button--skip-to-main {
+    position: absolute;
+	inset-block-start: 3rem;
+	inset-inline-start: 3rem;
+	z-index: 99999;
+	translate: 0 -200%;
+	
+    @media (prefers-reduced-motion: no-preference) {
+        transition: translate var(--transition-fast);
+    }
+}
+
+.button--skip-to-main:focus {
+    translate: 0 0;
+}

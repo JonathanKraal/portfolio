@@ -1,0 +1,153 @@
+/* || LANGUAGE CARD */
+
+.skills__language {
+    --_scale-step-default-clr: hsl(var(--hsl-base-700));
+    --_scale-step-size: 2.1rem;
+    --_scale-step-ratio: 1 / 3;
+    --_scale-step-border-clr-active: hsl(from var(--_parent-clr) h s var(--lightness-400) / 87.5%);
+    --_scale-step-shadow-clr-active: hsl(from var(--_parent-clr) h s var(--lightness-300) / 80%);
+    --_scale-step-shadow-blur: .8em;
+
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: var(--space-m);
+    inline-size: 100%;
+    max-inline-size: 38rem;
+    padding-block: var(--space-2xl);
+    background-color: hsl(var(--hsl-base-700) / 12%);
+    outline: 2px solid hsl(var(--hsl-base-800));
+    outline-offset: -1px;
+
+    @media (max-width: 600px) {
+        --_scale-step-size: 1.75rem;
+        --_scale-step-langauge-gap: var(--space-xl);
+
+        max-inline-size: 23rem; /*limit how much the card can stretch looks visually better when they break into 1 column*/
+        padding-block: var(--space-xl);
+    }
+}
+
+.skills__language--html,
+.skills__language--css,
+.skills__language--js {
+    --_scale-step-progress-clr: hsl(from var(--_parent-clr) h s var(--lightness-50));
+    --_scale-step-border-clr: color-mix(in xyz, hsl(from var(--_parent-clr) h s var(--lightness-400)) 35%, hsl(var(--hsl-base-600)));
+}
+
+.skills__language--html {
+    --_parent-clr: var(--clr-primary);
+}
+
+.skills__language--css {
+    --_parent-clr: var(--clr-secondary);
+}
+
+.skills__language--js {
+    --_parent-clr: var(--clr-tertiary);
+}
+
+.skills__language-title {
+    position: relative;
+    font-family: var(--ff-text);
+    font-size: clamp(var(--fs-h3) / 1.15, 14cqi, var(--fs-h2) / 1.25);
+    font-weight: var(--fw-black);
+    text-transform: uppercase;
+    color: color-mix(in xyz, hsl(from var(--_parent-clr) h s var(--lightness-400)) 87.5%, hsl(var(--hsl-base-400)));
+
+    &::before {
+        content: '';
+        inline-size: 7rem;
+        aspect-ratio: 1;
+        position: absolute;
+        inset: 2rem 50% auto auto;
+        background-color: currentColor;
+        opacity: .05;
+        animation: skills-dec-offset linear forwards;
+        animation-timeline: view();        
+    }
+
+    .skills__language--html &::before {
+        translate: var(--_html-dec-offset-x) var(--_html-dec-offset-y);
+    }
+
+    .skills__language--css &::before {
+        translate: var(--_css-dec-offset-x) var(--_css-dec-offset-y);
+    }
+
+    .skills__language--js &::before {
+        translate: var(--_js-dec-offset-x) var(--_js-dec-offset-y);
+    }
+}
+
+.skills__language-scale {
+    display: flex;
+    flex-direction: column-reverse; /*start counting skills scale steps from the bottom*/
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--_scale-step-langauge-gap, var(--space-2xl));
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0 auto 0 50%;
+        z-index: -1;
+        inline-size: 5px;
+        background-image: linear-gradient(to top, hsl(var(--hue-primary) 2.5%, 98.5%) var(--_level-language-skill), hsl(from hsl(var(--hsl-base-600)) h 2.5% l) var(--_level-language-skill));
+        translate: -50% 0;
+    }    
+}
+
+@keyframes skills-dec-offset {
+    to {
+        --_html-dec-offset-x: -12.5%;
+        --_html-dec-offset-y: -60%;
+        --_css-dec-offset-x: 50%;
+        --_css-dec-offset-y: 60%;
+        --_js-dec-offset-x: 50%;
+        --_js-dec-offset-y: -60%;
+    }
+}
+
+/*==============================================================*/
+
+/* || REGISTER CUSTOM PROPERTIES */
+
+@property --_html-dec-offset-x {
+    syntax: '<percentage>';
+    initial-value: 50%;
+    inherits: false;
+}
+
+@property --_html-dec-offset-y {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: false;
+}
+
+@property --_css-dec-offset-x {
+    syntax: '<percentage>';
+    initial-value: 12.5%;
+    inherits: false;
+}
+
+@property --_css-dec-offset-y {
+    syntax: '<percentage>';
+    initial-value: -12.5%;
+    inherits: false;
+}
+
+@property --_js-dec-offset-x {
+    syntax: '<percentage>';
+    initial-value: 25%;
+    inherits: false;
+}
+
+@property --_js-dec-offset-y {
+    syntax: '<percentage>';
+    initial-value: -10%;
+    inherits: false;
+}

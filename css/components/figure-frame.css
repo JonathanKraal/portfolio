@@ -1,0 +1,15 @@
+.figure-frame {
+    display: grid;
+    position: relative;
+    z-index: 1;
+    inline-size: var(--_frame-size);
+    aspect-ratio: var(--_frame-ratio);
+    background-image: var(--_frame-bg, linear-gradient(to right, hsl(var(--hsl-base-200) / 10%) 32.5%, transparent));
+
+    img {
+        place-self: stretch;
+        position: absolute;
+        inset: var(--_frame-img-position, 12%);
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,39 @@
+.slide-tuner {
+    --_tuner-small: 30px;
+    --_tuner-medium: 40px;
+    --_tuner-large: 55px;
+
+    --_slide-medium: clamp(18rem, 22vw, 27rem);
+    --_slide-large: clamp(22rem, 29vw, 43rem);
+
+    --_tuner-position-up: 35% 50% auto auto;
+    --_tuner-position-down: auto 50% 42% auto;
+
+    position: absolute;
+    z-index: 99;
+    inline-size: var(--width-slide-tuner-slide);
+    block-size: 100%;
+    background-color: var(--bg-slide-tuner-slide);
+}
+
+.slide-tuner::before {
+    content: '';
+    position: absolute;
+    inset: var(--_tuner-position, var(--_tuner-position-down));
+    inline-size: 8px;
+    block-size: var(--_tuner-height, var(--_tuner-medium));
+    border-radius: 2px;
+    background-color: var(--_tuner-clr, var(--clr-tertiary));
+    translate: 50% 0;
+}
+
+/*all slide-tuners inside main get a white nob, but limit the scope to the ones inside .card or .card--skills*/
+@scope (main) to ([class*="card"]) {
+    .slide-tuner {
+        block-size: var(--_slide-height, var(--_slide-medium));
+    }
+
+    .slide-tuner::before {
+        --_tuner-clr: var(--clr-primary-subtle);
+    }
+}

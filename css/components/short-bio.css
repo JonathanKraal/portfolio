@@ -1,0 +1,163 @@
+/* || GRID */
+
+.short-bio-wrapper {
+    --_figure-width-mobile: clamp(min(23rem, 100%), 13vw, 29rem);
+
+    display: grid;
+    grid-template-areas: "quote"
+                         "img-l"
+                         "content"
+                         "img-s";
+    gap: calc(var(--grid-gap) / 2);
+}
+
+
+.short-bio__quote {
+    --_quotation-offset: 6px;
+
+    grid-area: quote;
+    position: relative;
+    max-inline-size: 50ch;
+    padding: var(--space-l);
+    background-image: linear-gradient(to right, color-mix(in oklab, hsl(var(--hsl-primary) / 15%), hsl(var(--hsl-base-800)) 90%), transparent);
+    animation: color 1s linear infinite;
+
+    &::before,
+    &::after {
+        position: absolute;
+        font-family: serif;
+        font-size: 5em;
+    }
+
+    &::before {
+        content: open-quote;
+        inset: calc(var(--_quotation-offset) * -1) auto auto var(--_quotation-offset);
+        line-height: 1;
+        color: hsl(var(--hsl-secondary) / 70%);
+    }
+
+    &::after {
+        content: close-quote;
+        inset: auto var(--_quotation-offset) calc(var(--_quotation-offset) * -1) auto;
+        line-height: var(--_quotation-offset);
+        color: hsl(from var(--clr-secondary) h s var(--lightness-500) / 60%);
+    }
+
+    @media (max-width: 850px) {
+        &::after {
+            color: color-mix(in oklab, hsl(from var(--clr-secondary) h s var(--lightness-500) / 60%) 70%, hsl(from var(--clr-tertiary) h s var(--lightness-500) / 60%));
+        }
+    }
+}
+
+.short-bio__content {
+    grid-area: content;
+    display: grid;
+    gap: var(--content-gap);
+    position: relative;
+    z-index: 1;
+    max-inline-size: 45ch;
+    padding: var(--space-xl);
+    background-color: color-mix(in oklab, hsl(from var(--clr-secondary) h s 10%), hsl(var(--hsl-base-800)) 85%);
+}
+
+.figure-frame--short-bio-large {
+    --_frame-size: clamp(min(29rem, 100%), 27vw, 47rem);
+    --_frame-ratio: 1 / 1.1;
+
+    grid-area: img-l;
+
+    img {
+        object-position: left center;
+    }
+}
+
+.figure-frame--short-bio-small {
+    --_frame-size: var(--_figure-width-mobile);
+    --_frame-ratio: 1;
+    --_frame-bg: linear-gradient(to right, color-mix(in oklab, hsl(from var(--clr-primary) h s var(--lightness-400) / 37%), hsl(var(--hsl-base-800)) 85%) 32.5%, transparent);
+
+    grid-area: img-s;
+    justify-self: end;
+
+    img {
+        object-position: right center;
+    }
+}
+
+/*==============================================================*/
+
+/* || RESPONSIVE */
+
+@media (max-width: 480px) {
+    .short-bio__figure--large {
+        justify-self: end;
+        inline-size: var(--_figure-width-mobile);
+    }
+}
+
+@media (max-width: 675px) {
+    .short-bio__content {
+        justify-self: end;
+        padding: var(--space-l);
+    }
+
+    .short-bio__figure--large {
+        justify-self: end;
+        aspect-ratio: 1;
+    }
+
+    .short-bio__figure--small {
+        place-self: end start;
+    }
+}
+
+@media (min-width: 675px) {
+    .short-bio-wrapper {
+        row-gap: var(--grid-gap);
+    }
+
+    .short-bio__content {
+        inset-block-start: 7rem;
+        inset-inline-end: -6rem;
+    }
+
+    .short-bio__figure--small {
+        inset-block-start: -7.5rem;
+    }
+}
+
+@media (min-width: 675px) and (max-width: 1100px) {
+    .short-bio-wrapper {
+        row-gap: var(--grid-gap);
+    }
+
+    .short-bio__content {
+        justify-self: center;
+        inset-block-start: -12rem;
+    }
+
+    .short-bio__figure--small {
+        align-self: start;
+        grid-column: 1;
+        grid-row: 2;
+        inset-block-start: -3rem;
+    }
+}
+
+@media (min-width: 1100px) {
+    .short-bio-wrapper {   
+        grid-template-columns: .5fr 1fr minmax(clamp(38ch, 45vw, 45ch), 1fr) 1fr;
+        grid-template-areas: "quote quote quote quote"
+                             ". img-l content img-s";
+        place-items: start;
+    }
+
+    .short-bio__content {
+        inset-inline-end: -9rem;
+    }
+
+    .short-bio__figure--small {
+        inset-inline-end: calc(clamp(2rem, calc(2rem + ((1vw - 1.55rem) * 18.9189)), 9rem) * -1);
+    }
+}

@@ -1,0 +1,11 @@
+.intro {
+    display: grid;
+    gap: var(--section-header-gap);
+    margin-block-end: calc(var(--content-gap) * 3);
+}
+
+.intro--centered {
+    justify-items: center;
+    margin-inline: auto;
+    text-align: center;
+}
