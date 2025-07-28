@@ -1,0 +1,109 @@
+/* || WIDTH */
+
+.width--full { inline-size: 100% !important; }
+
+.width--fit-content { inline-size: fit-content !important; }
+
+.mw--xl { max-inline-size: 112rem !important; }
+
+.mw--l { max-inline-size: 96rem !important; }
+
+.mw--m { max-inline-size: 74rem !important; }
+
+.mw--s { max-inline-size: 52rem !important; }
+
+.mw--xs { max-inline-size: 30rem !important; }
+
+.mw--unset { max-inline-size: unset !important; }
+
+/*==================================================================*/
+
+/* || BORDER RADIUS */
+
+.border-rad--xs { border-radius: var(--border-rad-xs); }
+
+.border-rad--s { border-radius: var(--border-rad-s); }
+
+.border-rad--m { border-radius: var(--border-rad-m); }
+
+.border-rad--l { border-radius: var(--border-rad-l); }
+
+.border-rad--xl { border-radius: var(--border-rad-xl); }
+
+/*==================================================================*/
+
+/* || OBJECT-FIT */
+
+.object-fit--contain {
+	inline-size: 100% !important;
+	block-size: 100% !important;
+	object-fit: contain !important;
+}
+
+.object-fit--cover {
+	inline-size: 100% !important;
+	block-size: 100% !important;
+	object-fit: cover !important;
+}
+
+/*==================================================================*/
+
+/* || TEXT WRAP */
+
+.text--balance { text-wrap: balance !important; }
+
+.text--pretty { text-wrap: pretty !important; }
+
+/*==================================================================*/
+
+/* || LISTS */
+
+.list-no-marker {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*==================================================================*/
+
+/* || OVERFLOW */
+
+.overflow--hidden { overflow: hidden; }
+
+.overflow-x--clip { overflow-x: clip; }
+
+.overflow-y--clip { overflow-y: clip; }
+
+/*==================================================================*/
+
+/* || OTHER */
+
+/*make sure the element does not touch the edge of the screen on sections with content that extends the full viewport*/
+.content-width--safe {
+    max-inline-size: min(var(--_content-width, var(--_content-narrow-width)), calc(100% - var(--_gutter) * 2));
+    margin-inline: auto;
+}
+
+/*light border effect*/
+.border--light-gradient {
+    border: var(--border-light-gradient);
+    border-image-source: var(--clr-border-light-gradient);
+    border-image-slice: 1;
+    mask-image: linear-gradient(to right, rgb(0 0 0) 99%, transparent 99%); /*get rid of the border color leaking into the transparent area on the other side*/
+}
+
+/*center element*/
+.center--self {
+    margin-inline: auto;
+    text-align: center;
+}
+
+.sr-only {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    border: 0;
+    white-space: nowrap;
+    clip-path: rect(0 0 0 0);
+    overflow: hidden;
+}

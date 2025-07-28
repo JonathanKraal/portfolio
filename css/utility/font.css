@@ -1,0 +1,37 @@
+/* || FONT FACE */
+
+.ff--display { font-family: var(--ff-display) !important; }
+
+.ff--text { font-family: var(--ff-text) !important; }
+
+/*==================================================================*/
+
+/* || FONT SIZE */
+
+.fs--h1 { font-size: var(--fs-h1) !important; }
+
+.fs--h2 { font-size: var(--fs-h2) !important; }
+
+.fs--h3 { font-size: var(--fs-h3) !important; }
+
+.fs--h4 { font-size: var(--fs-h4) !important; }
+
+.fs--h5 { font-size: var(--fs-h5) !important; }
+
+.fs--h6 { font-size: var(--fs-h6) !important; }
+
+.fs--p { font-size: var(--fs-p) !important; }
+
+.fs--p-small { font-size: var(--fs-p-small) !important; }
+
+/*==================================================================*/
+
+/* || FONT WEIGHT */
+
+.fw--regular { font-weight: var(--fw-regular) !important; }
+
+.fw--medium { font-weight: var(--fw-medium) !important; }
+
+.fw--semi-bold { font-weight: var(--fw-semi-bold) !important; }
+
+.fw--bold { font-weight: var(--fw-bold) !important; }

@@ -1,0 +1,32 @@
+/* || DISPLAY */
+
+.display--inline { display: inline !important; }
+
+.display--block { display: block !important; }
+
+.display--inline-block { display: inline-block !important; }
+
+.display--flex { display: flex !important; }
+
+.display--inline-flex { display: inline-flex !important; }
+
+.display--grid { display: grid !important; }
+
+.display--inline-grid { display: inline-grid !important; }
+
+.display--contents { display: contents !important; }
+
+/*==================================================================*/
+
+/* || POSITION */
+
+.position--relative { position: relative !important; }
+
+.position--absolute { position: absolute !important; }
+
+.position--fixed { position: fixed !important; }
+
+.position--sticky { 
+    position: sticky !important; 
+    inset-block-start: var(--top-pos-sticky);
+}
