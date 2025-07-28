@@ -1,0 +1,29 @@
+::view-transition-old(root) {
+    animation: .5s ease-out both transition-old-page;
+}
+
+::view-transition-new(root) {
+   animation: .5s .15s ease-out both transition-new-page;
+}
+
+@keyframes transition-old-page {
+    from {
+        translate: 0 0;
+        opacity: 1;
+    }
+    to {
+        translate: -15% 0;
+        opacity: 0;
+    }
+}
+
+@keyframes transition-new-page {
+    from {
+        translate: -25% 0;
+        opacity: 0;
+    }
+    to {
+        translate: 0 0;
+        opacity: 1;
+    }
+}

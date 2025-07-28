@@ -1,0 +1,48 @@
+/*.animate-scroll--fade-in {
+    opacity: 0;
+    animation: scroll-fade-in var(--transition-medium) linear forwards;
+    animation-timeline: view();
+    animation-range: 35% 60%;
+}
+
+@keyframes scroll-fade-in {
+    to {
+        opacity: 1;
+    }
+}*/
+
+@media (prefers-reduced-motion: no-preference) {
+    .animate-scroll--tuner::before {
+        transform: translateY(9rem);
+        animation: tuner-move-vertical linear forwards;
+        animation-timeline: view();
+        animation-range: 5% 95%;
+    }
+
+    .animate-scroll--scale-image {
+        filter: grayscale(100%);
+        scale: .8;
+        animation: scale-image linear forwards;
+        animation-timeline: view();
+        animation-range: 12.5% 32.5%;
+    }
+}
+
+/*==================================================================*/
+
+/* || KEYFRAMES*/
+
+@keyframes tuner-move-vertical {
+    to {
+        transform: translateY(-9rem);
+    }
+}
+
+
+
+@keyframes scale-image {
+    to {
+        filter: grayscale(0);
+        scale: 1;
+    }
+}
