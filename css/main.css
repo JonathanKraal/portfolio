@@ -1,1 +1,48 @@
 
+@import 'animations/view-transitions.css';
+@import 'animations/scroll-animations.css';
+
+@import 'components/badge.css';
+@import 'components/buttons.css';
+@import 'components/card.css';
+@import 'components/figure-frame.css';
+@import 'components/grid-2-col.css';
+@import 'components/grid-3-col.css';
+@import 'components/grid-auto.css';
+@import 'components/icons.css';
+@import 'components/intro.css';
+@import 'components/marquee.css';
+@import 'components/portfolio-card.css';
+@import 'components/portfolio-filter.css';
+@import 'components/scale-step.css';
+@import 'components/score-bar.css';
+@import 'components/scrollbar.css';
+@import 'components/short-bio.css';
+@import 'components/skills-language.css';
+@import 'components/skills-tool.css';
+@import 'components/skills.css';
+@import 'components/slide-tuner.css';
+@import 'components/socials.css';
+@import 'components/text-links.css';
+@import 'components/timeline.css';
+@import 'components/usp.css';
+@import 'components/value.css';
+
+@import 'layout/body-inner.css';
+@import 'layout/footer.css';
+@import 'layout/header.css';
+@import 'layout/hero.css';
+@import 'layout/navigation.css';
+@import 'layout/section-short-bio.css';
+@import 'layout/section-usp.css';
+@import 'layout/sections.css';
+
+@import 'main/global.css';
+@import 'main/resets.css';
+@import 'main/typography.css';
+@import 'main/variables.css';
+
+@import 'utility/spacing.css';
+@import 'utility/font.css';
+@import 'utility/miscellaneous.css';
+@import 'utility/display-position.css';
