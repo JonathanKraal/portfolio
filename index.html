@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/icon-fonts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Portfolio Jonathan Kraal</title>
+</head>
+
+<body>
+    <div class="body-inner">
+        <header class="header">
+            <div class="header-inner">
+                <a href="#main" class="button button--skip-to-main">Ga naar hoofdinhoud</a>
+                <a href="/" aria-label="Ga naar homepage">
+                    <img src="assets/img/Logo Jonathan Kraal.png" alt="logo" class="header__logo">
+                </a>
+                <nav class="nav--header" aria-label="Hoofd">
+                    <ul>
+                        <li>
+                            <a href="/" aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="over-mij.html">Over mij</a>
+                        </li>
+                        <li>
+                            <a href="portfolio.html">Portfolio</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main">
+            <section class="hero hero--home | section--light">
+                <div class="hero__inner | section-inner">
+                    <div class="hero__intro">
+                        <header class="hero__intro-header">
+                            <h1>Jonathan Kraal</h1>
+                            <p class="hero__lede">Front-end web developer voor WordPress websites.</p>
+                        </header>
+                        <ul class="socials">
+                            <li>
+                                <a href="https://www.linkedin.com/in/jonathan-kraal-140352224/" target="_blank" aria-label="Bekijk mijn LinkedIn pagina">
+                                    <i class="fa-brands fa-linkedin | icon"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" aria-label="Bekijk de source code in GitHub">
+                                    <i class="fa-brands fa-github | icon"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/Jonathan.l.kraal" target="_blank" aria-label="Bekijk mijn Facebook pagina">
+                                    <i class="fa-brands fa-facebook | icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hero__content">
+                        <p>Sinds 2021 heb ik ervaring met het bouwen van websites in WordPress. Mijn focus ligt op de front-end ontwikkeling, waar voor mij het gewicht vooral ligt op HTML en CSS. De websites die ik bouw zijn doorgaans van tevoren gedesigned door een designer en worden door mij op maat gemaakt zonder thema.</p>
+                        <a href="assets/documents/CV Jonathan Kraal.pdf/" class="button" aria-label="download mijn CV (ODT, 2 pagina's, 570kB)" download>Download mijn CV</a>
+                    </div>
+                </div>
+                <div id="slide-tuner-hero-top" class="slide-tuner"></div>
+                <div id="slide-tuner-hero-bottom" class="slide-tuner animate-scroll--tuner"></div>
+            </section>
+
+            <section class="section--usp">
+                <div class="section-inner">
+                    <h2>Mijn onderscheidende vermogens</h2>
+                </div>
+                <ol class="usp-wrapper | grid--3-col">
+                    <li class="usp-card">
+                        <h3 class="usp-card__heading">Maintainability</h3>
+                        <p class="usp-card__description">Tijdens het ontwikkelen heb ik ook oog voor de onder&shy;houd&shy;baar&shy;heid van de code. Dit houdt in dat ik zorg voor een goede structuur, opbouw en organisatie van de code.</p>
+                        <svg class="usp-card__svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54"
+                            fill="none">
+                            <path
+                                d="M3.44912 0.00300363L0.0849609 3.36697L7.48611 13.7314C7.79768 14.1678 8.20909 14.5235 8.68603 14.7687C9.16297 15.0138 9.69162 15.1415 10.2279 15.1409H10.4634C10.9057 15.1405 11.3438 15.2274 11.7525 15.3965C12.1612 15.5657 12.5325 15.8137 12.8452 16.1265L21.8443 25.1251L13.0403 34.0531C11.5345 33.6099 9.94612 33.5236 8.40115 33.8011C6.85618 34.0787 5.39714 34.7124 4.13978 35.652C2.88241 36.5917 1.86131 37.8113 1.15747 39.2143C0.453626 40.6173 0.0864149 42.165 0.0849609 43.7346C0.0869776 45.1809 0.399859 46.6099 1.00241 47.9247C1.60495 49.2395 2.48309 50.4095 3.57731 51.3553C4.67154 52.3012 5.95629 53.0008 7.34453 53.4067C8.73276 53.8127 10.192 53.9155 11.6235 53.7083C13.055 53.5011 14.4252 52.9886 15.6412 52.2056C16.8573 51.4226 17.8909 50.3874 18.672 49.1701C19.453 47.9528 19.9632 46.5818 20.1681 45.1501C20.373 43.7184 20.2678 42.2594 19.8595 40.8719L28.788 32.0684L32.0445 35.3247L31.0184 38.3994C30.8212 38.992 30.793 39.6278 30.9367 40.2356C31.0805 40.8434 31.3907 41.3992 31.8325 41.8407L42.8333 52.8409C43.145 53.1543 43.5156 53.4031 43.9238 53.5729C44.332 53.7426 44.7697 53.83 45.2118 53.83C45.6538 53.83 46.0916 53.7426 46.4997 53.5729C46.9079 53.4031 47.2785 53.1543 47.5902 52.8409L52.9258 47.5056C53.2393 47.1939 53.488 46.8234 53.6578 46.4152C53.8276 46.007 53.915 45.5693 53.915 45.1273C53.915 44.6852 53.8276 44.2475 53.6578 43.8394C53.488 43.4312 53.2393 43.0606 52.9258 42.749L41.925 31.7488C41.4835 31.307 40.9277 30.9968 40.3198 30.8531C39.712 30.7093 39.0761 30.7376 38.4835 30.9347L35.4086 31.9607L32.179 28.7313L41.195 19.8403C42.6906 20.2396 44.258 20.29 45.7762 19.9877C47.2945 19.6855 48.723 19.0386 49.9517 18.097C51.1804 17.1553 52.1764 15.9441 52.8629 14.5568C53.5495 13.1694 53.9082 11.6429 53.9115 10.0949C53.9115 9.18664 53.7971 8.31537 53.5683 7.48111L46.369 14.6834L40.4548 13.4589L39.2303 7.54839L46.433 0.346129C44.7196 -0.114529 42.915 -0.115389 41.2012 0.343636C39.4874 0.80266 37.9248 1.70535 36.6711 2.9607C35.4174 4.21606 34.5168 5.77972 34.0601 7.49408C33.6034 9.20843 33.6067 11.0129 34.0697 12.7255L25.1883 21.7342L16.2094 12.7625C15.5784 12.1318 15.2239 11.2763 15.2237 10.3842V10.1454C15.2237 9.60969 15.0958 9.08175 14.8507 8.60546C14.6055 8.12918 14.2501 7.71833 13.8141 7.4071L3.44912 0.00300363ZM35.8998 35.8158C36.056 35.6592 36.2417 35.5349 36.446 35.4501C36.6504 35.3653 36.8694 35.3217 37.0907 35.3217C37.3119 35.3217 37.531 35.3653 37.7354 35.4501C37.9397 35.5349 38.1254 35.6592 38.2816 35.8158L48.0848 45.6218C48.3912 45.939 48.5607 46.3639 48.5569 46.8049C48.553 47.2459 48.3761 47.6678 48.0643 47.9796C47.7524 48.2915 47.3305 48.4684 46.8895 48.4722C46.4484 48.476 46.0235 48.3065 45.7063 48.0001L35.8998 38.1975C35.7431 38.0413 35.6189 37.8557 35.5341 37.6513C35.4493 37.447 35.4056 37.2279 35.4056 37.0067C35.4056 36.7854 35.4493 36.5664 35.5341 36.362C35.6189 36.1577 35.7431 35.9721 35.8998 35.8158ZM10.1774 37.0067L11.762 37.8208L13.5416 37.9082L14.5071 39.4052L16.0042 40.3706L16.0916 42.1502L16.9057 43.7346L16.0916 45.319L16.0042 47.0986L14.5071 48.064L13.5416 49.561L11.762 49.6485L10.1774 50.4626L8.59292 49.6485L6.81328 49.561L5.84776 48.064L4.35071 47.0986L4.26324 45.319L3.44912 43.7346L4.26324 42.1502L4.35071 40.3706L5.84776 39.4052L6.81328 37.9082L8.59292 37.8208L10.1774 37.0067Z" />
+                        </svg>
+                    </li>
+                    <li class="usp-card">
+                        <h3 class="usp-card__heading">Scalability</h3>
+                        <p class="usp-card__description">Bij het opzetten van de infrastructuur en het schrijven van de code houdt ik er rekening mee dat een website een schaalbaar product moet kunnen zijn.</p>
+                        <svg class="usp-card__svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 54"
+                            fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20.1695 34.2461C19.853 33.9298 19.4239 33.752 18.9764 33.752C18.5289 33.752 18.0998 33.9298 17.7833 34.2461L3.95935 48.0701V38.7281C3.95935 38.2806 3.78156 37.8513 3.46509 37.5349C3.14863 37.2184 2.7194 37.0406 2.27185 37.0406C1.8243 37.0406 1.39508 37.2184 1.07861 37.5349C0.76214 37.8513 0.584351 38.2806 0.584351 38.7281V52.1438C0.584351 52.5913 0.76214 53.0205 1.07861 53.337C1.39508 53.6535 1.8243 53.8313 2.27185 53.8313H15.6875C16.135 53.8313 16.5642 53.6535 16.8807 53.337C17.1972 53.0205 17.375 52.5913 17.375 52.1438C17.375 51.6962 17.1972 51.267 16.8807 50.9505C16.5642 50.634 16.135 50.4563 15.6875 50.4563H6.34548L20.1695 36.6323C20.4858 36.3158 20.6636 35.8867 20.6636 35.4392C20.6636 34.9917 20.4858 34.5626 20.1695 34.2461ZM34.8305 34.2461C35.1469 33.9298 35.5761 33.752 36.0235 33.752C36.471 33.752 36.9001 33.9298 37.2166 34.2461L51.0406 48.0701V38.7281C51.0406 38.2806 51.2184 37.8513 51.5349 37.5349C51.8513 37.2184 52.2806 37.0406 52.7281 37.0406C53.1757 37.0406 53.6049 37.2184 53.9213 37.5349C54.2378 37.8513 54.4156 38.2806 54.4156 38.7281V52.1438C54.4156 52.5913 54.2378 53.0205 53.9213 53.337C53.6049 53.6535 53.1757 53.8313 52.7281 53.8313H39.3125C38.8649 53.8313 38.4357 53.6535 38.1192 53.337C37.8028 53.0205 37.625 52.5913 37.625 52.1438C37.625 51.6962 37.8028 51.267 38.1192 50.9505C38.4357 50.634 38.8649 50.4563 39.3125 50.4563H48.6545L34.8305 36.6323C34.5141 36.3158 34.3364 35.8867 34.3364 35.4392C34.3364 34.9917 34.5141 34.5626 34.8305 34.2461ZM34.8305 19.5851C35.1469 19.9015 35.5761 20.0792 36.0235 20.0792C36.471 20.0792 36.9001 19.9015 37.2166 19.5851L51.0406 5.76113V15.1031C51.0406 15.5507 51.2184 15.9799 51.5349 16.2964C51.8513 16.6128 52.2806 16.7906 52.7281 16.7906C53.1757 16.7906 53.6049 16.6128 53.9213 16.2964C54.2378 15.9799 54.4156 15.5507 54.4156 15.1031V1.6875C54.4156 1.23995 54.2378 0.810725 53.9213 0.494257C53.6049 0.17779 53.1757 0 52.7281 0H39.3125C38.8649 6.66906e-09 38.4357 0.17779 38.1192 0.494257C37.8028 0.810725 37.625 1.23995 37.625 1.6875C37.625 2.13505 37.8028 2.56428 38.1192 2.88074C38.4357 3.19721 38.8649 3.375 39.3125 3.375H48.6545L34.8305 17.199C34.5141 17.5155 34.3364 17.9446 34.3364 18.3921C34.3364 18.8395 34.5141 19.2687 34.8305 19.5851ZM20.1695 19.5851C19.853 19.9015 19.4239 20.0792 18.9764 20.0792C18.5289 20.0792 18.0998 19.9015 17.7833 19.5851L3.95935 5.76113V15.1031C3.95935 15.5507 3.78156 15.9799 3.46509 16.2964C3.14863 16.6128 2.7194 16.7906 2.27185 16.7906C1.8243 16.7906 1.39508 16.6128 1.07861 16.2964C0.76214 15.9799 0.584351 15.5507 0.584351 15.1031V1.6875C0.584351 1.23995 0.76214 0.810725 1.07861 0.494257C1.39508 0.17779 1.8243 0 2.27185 0H15.6875C16.135 6.66906e-09 16.5642 0.17779 16.8807 0.494257C17.1972 0.810725 17.375 1.23995 17.375 1.6875C17.375 2.13505 17.1972 2.56428 16.8807 2.88074C16.5642 3.19721 16.135 3.375 15.6875 3.375H6.34548L20.1695 17.199C20.4858 17.5155 20.6636 17.9446 20.6636 18.3921C20.6636 18.8395 20.4858 19.2687 20.1695 19.5851Z" />
+                        </svg>
+                    </li>
+                    <li class="usp-card">
+                        <h3 class="usp-card__heading">Performance</h3>
+                        <p class="usp-card__description">Ik hecht waarde aan de laadsnelheid van de website, zodat bezoekers relatief snel de pagina te zien krijgen.</p>
+                        <svg class="usp-card__svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 54"
+                            fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0.584961 0H3.94934V50.4656H54.415V53.83H0.584961V0ZM34.2287 11.7753C34.2287 11.3292 34.4059 10.9013 34.7214 10.5858C35.0369 10.2704 35.4648 10.0931 35.9109 10.0931H49.3684C49.8145 10.0931 50.2424 10.2704 50.5579 10.5858C50.8734 10.9013 51.0506 11.3292 51.0506 11.7753V25.2328C51.0506 25.679 50.8734 26.1068 50.5579 26.4223C50.2424 26.7378 49.8145 26.915 49.3684 26.915C48.9223 26.915 48.4944 26.7378 48.1789 26.4223C47.8634 26.1068 47.6862 25.679 47.6862 25.2328V16.4854L35.5307 31.3459C35.3819 31.5275 35.1967 31.676 34.9871 31.7817C34.7775 31.8875 34.548 31.9482 34.3135 31.9599C34.079 31.9716 33.8446 31.9341 33.6255 31.8498C33.4063 31.7655 33.2073 31.6362 33.0411 31.4704L24.3374 22.7667L12.0373 39.6794C11.7682 40.0216 11.377 40.2461 10.9458 40.3058C10.5147 40.3656 10.0771 40.2558 9.7252 39.9997C9.37325 39.7436 9.13428 39.361 9.05851 38.9324C8.98274 38.5038 9.07607 38.0624 9.31888 37.7012L22.7764 19.1971C22.9192 19.0004 23.103 18.8369 23.3151 18.718C23.5272 18.5991 23.7626 18.5276 24.0049 18.5084C24.2473 18.4892 24.491 18.5228 24.7192 18.6069C24.9473 18.6909 25.1546 18.8234 25.3266 18.9953L34.1042 27.7763L45.819 13.4575H35.9109C35.4648 13.4575 35.0369 13.2803 34.7214 12.9648C34.4059 12.6493 34.2287 12.2215 34.2287 11.7753Z" />
+                        </svg>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="section--full overflow--hidden">
+                <div class="section-inner">
+                    <h2 class="content-width--safe">Plugins en tools</h2>
+                    <ul class="marquee marquee--tools">
+                        <li class="marquee__item" style="--_i: 0">
+                            <img src="/assets/img/logo ACSS.jpg" alt="logo Automatic.css">
+                        </li>
+                        <li class="marquee__item" style="--_i: 1">
+                            <img src="assets/img/logo Bricks Builder.png" alt="logo Bricks Builder">
+                        </li>
+                        <li class="marquee__item" style="--_i: 2">
+                            <img src="assets/img/logo Visual Studio Code.png" alt="logo Visual Studio Code">
+                        </li>
+                        <li class="marquee__item" style="--_i: 3">
+                            <img src="assets/img/Meta Box logo inverse.png" alt="logo Meta Box">
+                        </li>
+                        <li class="marquee__item" style="--_i: 4">
+                            <img src="assets/img/logo Figma.png" alt="logo Figma">
+                        </li>
+                        <li class="marquee__item" style="--_i: 5">
+                            <img src="/assets/img/logo Oxygen Builder.webp" alt="logo Oxygen Builder">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section--short-bio | section--wide">
+                <div class="short-bio-wrapper | section-inner">
+                    <blockquote class="short-bio__quote | border--light-gradient">Wanneer het aanpassen van de primaire
+                        kleur op de website meer dan een paar seconden duurt, weet je genoeg over de kwaliteit van de
+                        codebase.</blockquote>
+                    <div class="short-bio__content">
+                        <h2>Een korte kennismaking</h2>
+                        <p>Vanwege mijn muziektheoretische achtergrond ben ik analytisch sterk en
+                            door mijn achtergrond als uitvoerend en docerend musicus heb ik oog voor detail en een streven naar perfectie. Met deze belangrijke
+                            kwaliteiten heb ik mij omgeschoold tot website developer. Verder ben ik rustig, leergierig en werk ik graag met structuur en planning.</p>
+                        <a href="/over-mij" class="button">Volledige biografie</a>
+                    </div>
+                    <figure class="figure-frame figure-frame--short-bio-large">
+                        <img src="/assets/img/Jonathan op kantoor achter PC.jpg" alt="Jonathan op kantoor achter PC" class="animate-scroll--scale-image">
+                    </figure>
+                    <figure class="figure-frame figure-frame--short-bio-small">
+                        <img src="/assets/img/Jonathan werkt aan web development.jpg"
+                            alt="Jonathan werkt aan web development" class="animate-scroll--scale-image">
+                    </figure>
+                </div>
+            </section>
+
+            <section class="section--wide overflow-x--clip">
+                <div class="grid--value | section-inner">
+                    <h2>Waar ik voor sta als website developer</h2>
+                    <ul class="values">
+                        <li class="card card--value">
+                            <h3 class="card__title">Maintainable websites</h3>
+                            <p class="card__description">Wil je een halfuur bezig zijn om de spacing tussen alle cards op de website aan te passen, wanneer dit verzoek via de designer of de klant binnenkomt? Weet je überhaupt nog na 6 maanden uit je hoofd welke van de 15 pagina's cards hebben? Dit zijn geen zorgen wanneer de website op een maintainable wijze gebouwd is.</p>
+                            <div class="slide-tuner"></div>
+                        </li>
+                        <li class="card card--value">
+                            <h3 class="card__title">Accessible websites</h3>
+                            <p class="card__description">Zou het gunstig zijn wanneer bezoekers jouw website verlaten, omdat ze deze niet via het toetsenbord kunnen navigeren op hun laptop op weg naar huis in een schokkende en deinsende bus? Geef mensen met een beperking of in een beperkende situatie ook een goede gebruikerservaring door accessibility in gedachten te houden tijdens en na de ontwikkeling.</p>
+                            <div class="slide-tuner"></div>
+                        </li>
+                        <li class="card card--value">
+                            <h3 class="card__title">Scalable websites</h3>
+                            <p class="card__description">Het team van de klant gaat uitbreiden: er komen 3 nieuwe teamleden bij en op elke teamlid pagina wil de klant nu ook de specialisaties voor het teamlid laten zien. Als elk teamlid een pagina is die je op en neer hebt gekopieerd, wordt de klant dan blij van een forse factuur voor al dit extra uitbreidingswerk?</p>
+                            <div class="slide-tuner"></div>
+                        </li>
+                        <li class="card card--value">
+                            <h3 class="card__title">Professional tools</h3>
+                            <p class="card__description">Zou een ingehuurde professionele fotograaf een studio binnenwandelen met een camera van de Kruidvat? Zou het voor een web developer dan wel prima zijn, wanneer hij zijn websites voor klanten bouwt met een plugin stack die niet gericht is op een professionele workflow (professionele page builder, CSS framework etc)?</p>
+                            <div class="slide-tuner"></div>
+                        </li>
+                    </ul>
+                    <img src="/assets/img/Computerschermen in paarse kamer.jpg"
+                        alt="Computerschermen met code en bliksemstralen in paars verlichte kamer" class="animate-scroll--scale-image">
+                    <div class="slide-tuner animate-scroll--tuner"></div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer | section--wide">
+            <div class="footer-inner | section-inner">
+                <ul class="socials">
+                    <li>
+                        <a href="https://www.linkedin.com/in/jonathan-kraal-140352224/" target="_blank" aria-label="Bekijk mijn LinkedIn pagina">
+                            <i class="fa-brands fa-linkedin | icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" aria-label="Bekijk de source code in GitHub">
+                            <i class="fa-brands fa-github | icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Jonathan.l.kraal" target="_blank" aria-label="Bekijk mijn Facebook pagina">
+                            <i class="fa-brands fa-facebook | icon"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer__info">
+                    <div class="footer__info-nav-wrapper">
+                        <h3>Navigatie</h3>
+                        <nav class="footer__nav" aria-label="Hoofd">
+                            <ul>
+                                <li><a href="/" aria-current="page">Home</a></li>
+                                <li><a href="over-mij.html">Over mij</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                            </ul>
+                        </nav>
+                        <a href="assets/documents/CV Jonathan Kraal.pdf/" class="text-link" aria-label="download mijn CV (ODT, 2 pagina's, 28kB)" download>CV</a>
+                    </div>
+                    <div class="footer__info-contact-wrapper">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li>
+                                <a href="mailto:jonathan.kraal@solconmail.nl" target="_blank" class="text-link">jonathan.kraal@solconmail.nl</a>
+                            </li>
+                            <li>Buskruithof 4
+                                <br>
+                                2967 XN Langerak
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-tuner"></div>
+            </div>
+            <p class="footer__footnote">Website developed and designed by Jonathan Kraal</p>
+        </footer>
+    </div>
+</body>
+
+</html>

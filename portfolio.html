@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/icon-fonts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Portfolio Jonathan Kraal</title>
+</head>
+
+<body>
+    <div class="body-inner">
+        <header class="header">
+            <div class="header-inner">
+                <a href="#main" class="button button--skip-to-main">Ga naar hoofdinhoud</a>
+                <a href="/" aria-label="Ga naar homepage">
+                    <img src="assets/img/Logo Jonathan Kraal.png" alt="logo" class="header__logo">
+                </a>
+                <nav class="nav--header" aria-label="Hoofd">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="over-mij.html">Over mij</a>
+                        </li>
+                        <li>
+                            <a href="portfolio.html" aria-current="page">Portfolio</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main">
+            <section class="hero hero--about-me | section--light">
+                <div class="hero__inner | section-inner">
+                    <div class="hero__biography">
+                        <h2>Ontwikkelproces</h2>
+                        <p>Voor elk van mijn portfolio websites geldt dat er een wireframe en een UX/UI design was gemaakt, voordat ik begon met de ontwikkeling. Ook zijn alle websites (zowel de template websites als de custom designs) zonder thema gemaakt in Oxygen Builder of Bricks Builder. Voor het opleveren van de conceptwebsite en na oplevering van het volledig product, heeft de klant de mogelijkheid om feedback of veranderingen door te geven. Het kan dus zijn dat de klant zelf na oplevering foto's, teksten of elementen heeft aangepast, waardoor de originele setup en het design in de loop der tijd zijn veranderd.</p>
+                        <p>Mijn portolio websites zijn onderverdeeld in 2 type designs:</p>
+                        <ul class="list">
+                            <li><strong>Template</strong>: websites met een redelijk vaststaand opbouw en layout. Per project kunnen kleuren, typografie en content worden aangepast.</li>
+                            <li><strong>Custom</strong>: een op maat gemaakt product, geheel aansluitend bij de branding van het bedrijf.</li>
+                        </ul>
+                        <a href="#portfolio" class="button">Bekijk mijn portfolio</a>
+                    </div>
+                    <figure class="figure-frame figure-frame--hero-about-me">
+                        <img src="/assets/img/Mobiele telefoons en glazen tegeltjes liggend op een paarse achtergrond.png" alt="Mobiele telefoons en glazen tegeltjes liggend op een paarse achtergrond">
+                    </figure>
+                </div>
+                <div id="slide-tuner-hero-top" class="slide-tuner"></div>
+                <div id="slide-tuner-hero-bottom" class="slide-tuner animate-scroll--tuner"></div>
+            </section>
+
+            <section id="portfolio" class="portfolio-section | section--wide section--center">
+                <div class="section-inner">
+                    <header class="intro intro--centered">
+                        <h1 class="display--block center--self h2">Een greep uit mijn portfolio</h1>
+                        <p>De datum is die van livegang, behalve in het geval wanneer de klant maandenlang niets meer van zich liet horen, nadat de conceptversie was opgeleverd. Bij zulk soort projecten is de datum het moment waarop ik inschat de laatste aanpassing gedaan te hebben, voor de radiostilte van de klant. Ook kan na livegang kunnen er nieuwe aanpassingen en feedback zijn gekomen, waardoor de website op sommige punten in de tussentijd is veranderd.</p>
+                    </header>
+                    <fieldset class="portfolio-filter">
+                        <legend>Portofolio filter opties</legend>
+
+                        <input id="all" class="sr-only" type="radio" name="portfolio-type" tabindex="0" checked>
+                        <label for="all" class="portfolio-filter__button">Alles</label>
+
+                        <input id="custom" class="sr-only" type="radio" name="portfolio-type">
+                        <label for="custom" class="portfolio-filter__button">Custom</label>
+
+                        <input id="template" class="sr-only" type="radio" name="portfolio-type">
+                        <label for="template" class="portfolio-filter__button">Template</label>
+                    </fieldset>
+                    <ul class="portfolio-list">
+                        <li>
+                            <article class="portfolio-card" data-custom>
+                                <a href="https://www.heerenaandehaven.nl/" target="_blank" class="portfolio-card__link" aria-label="website Heeren aan de Haven"></a>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__title-wrapper">
+                                        <h2 class="portfolio-card__title">Heeren aan de Haven</h2>
+                                        <span class="portfolio-card__date">ca. sept 2023</span>
+                                    </div>
+                                    <p class="portfolio-card__description">Een restaurant chain met 4 locaties. Alle vier locaties gebruiken hetzelfde smaakvolle design met kleur- en content aanpassingen.</p>
+                                    <span class="badge portfolio-card__badge">custom design</span>
+                                    <span class="portfolio-card__button button--small">Bekijk website <span class="sr-only">Heeren aan de Haven</span></span>
+                                </div>
+                                <figure class="portfolio-card__media-wrapper" aria-label="website Happy Life Fysiotherapie">
+                                    <img src="assets/img/Portfolios/Porfolio thumbnail - Heeren aan de Haven.png" alt="Porfolio thumbnail - Heeren aan de Haven" class="portfolio-card__media">
+                                </figure>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="portfolio-card" data-template>
+                                <a href="https://boilerplate-fysio-4.website-development.io/" target="_blank" class="portfolio-card__link" aria-label="website subdomein fysiotherapie template #4 (boilerplate)"></a>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__title-wrapper">
+                                        <h2 class="portfolio-card__title">Nieuwste fysiotherapie template</h2>
+                                        <span class="portfolio-card__date">juli 2025</span>
+                                    </div>
+                                    <p class="portfolio-card__description">Dit is het 4e en nieuwste fysiotherapie template. Het is work in progress, maar veel is al ontwikkeld.</p>
+                                    <span class="badge portfolio-card__badge">template design</span>
+                                    <span class="portfolio-card__button button--small">Bekijk website <span class="sr-only">subdomein fysiotherapie template #4 (boilerplate)</span></span>
+                                </div>
+                                <figure class="portfolio-card__media-wrapper" aria-label="website Happy Life Fysiotherapie">
+                                    <img src="assets/img/Portfolios/Porfolio thumbnail - Fysiotherapie template 4.png" alt="Porfolio thumbnail - Fysiotherapie template #4" class="portfolio-card__media">
+                                </figure>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="portfolio-card" data-custom>
+                                <a href="https://mistersales.nu/" target="_blank" class="portfolio-card__link" aria-label="website MisterSales"></a>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__title-wrapper">
+                                        <h2 class="portfolio-card__title">MisterSales</h2>
+                                        <span class="portfolio-card__date">ca. jan 2024</span>
+                                    </div>
+                                    <p class="portfolio-card__description">Een MBK marketing bureau. Dit was een vrij lang project vanwege een pittig design en veel communicatie omtrent klantwensen.</p>
+                                    <span class="badge portfolio-card__badge">custom design</span>
+                                    <span class="portfolio-card__button button--small">Bekijk website <span class="sr-only">MisterSales</span></span>
+                                </div>
+                                <figure class="portfolio-card__media-wrapper" aria-label="website MisterSales">
+                                    <img src="assets/img/Portfolios/Porfolio thumbnail - MisterSales.png" alt="Porfolio thumbnail - Mister Sales" class="portfolio-card__media">
+                                </figure>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="portfolio-card" data-custom>
+                                <a href="https://noordzijvegenenreinigen.nl/" class="portfolio-card__link" aria-label="website Noordzij Vegen & Reinigen"></a>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__title-wrapper">
+                                        <h2 class="portfolio-card__title">Noordzij Vegen & Reinigen</h2>
+                                        <span class="portfolio-card__date">11 jan 2024</span>
+                                    </div>
+                                    <p class="portfolio-card__description">Een ogenschijnlijk simpele one-pager, maar het design bevat een verassend creatief en complex effect.</p>
+                                    <span class="badge portfolio-card__badge">custom design</span>
+                                    <span class="portfolio-card__button button--small">Bekijk website <span class="sr-only">Noordzij Vegen & Reinigen</span></span>
+                                </div>
+                                <figure class="portfolio-card__media-wrapper" aria-label="website Noordzij Vegen & Reinigen">
+                                    <img src="assets/img/Portfolios/Porfolio thumbnail - Noordzij Vegen & Reinigen.png" alt="Porfolio thumbnail - Ramkast" class="portfolio-card__media">
+                                </figure>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="portfolio-card" data-template>
+                                <a href="https://thuisinjelichaam.nl/" class="portfolio-card__link" aria-label="website Thuis in je Lichaam"></a>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__title-wrapper">
+                                        <h2 class="portfolio-card__title">Thuis in je Lichaam</h2>
+                                        <span class="portfolio-card__date">11 mei 2025</span>
+                                    </div>
+                                    <p class="portfolio-card__description">Een yoga, fysiotherapie en ademtherapie praktijk. Het vinden van rust en kalmte bij deze therapeut begint al bij de website's uitstraling.</p>
+                                    <span class="badge portfolio-card__badge">template design</span>
+                                    <span class="portfolio-card__button button--small">Bekijk website <span class="sr-only">Thuis in je Lichaam</span></span>
+                                </div>
+                                <figure class="portfolio-card__media-wrapper" aria-label="website Thuis in je Lichaam">
+                                    <img src="assets/img/Portfolios/Porfolio thumbnail - Thuis in je Lichaam.png" alt="Porfolio thumbnail - Thuis in je Lichaam" class="portfolio-card__media">
+                                </figure>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="portfolio-card" data-custom>
+                                <a href="https://thebonesetters.nl/" class="portfolio-card__link" aria-label="website The BoneSetters"></a>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__title-wrapper">
+                                        <h2 class="portfolio-card__title">The BoneSetters</h2>
+                                        <span class="portfolio-card__date">jan 2024</span>
+                                    </div>
+                                    <p class="portfolio-card__description">Een kleine chiropractiepratkijk, gespecialiseerd in TitTar chiropractie. De gradient borders en het cameralens effect zorgen voor een unieke touch.</p>
+                                    <span class="badge portfolio-card__badge">custom design</span>
+                                    <span class="portfolio-card__button button--small">Bekijk website <span class="sr-only">The BoneSetters</span></span>
+                                </div>
+                                <figure class="portfolio-card__media-wrapper" aria-label="website The BoneSetters">
+                                    <img src="assets/img/Portfolios/Porfolio thumbnail - The BoneSetters.png" alt="Porfolio thumbnail - The BoneSetters" class="portfolio-card__media">
+                                </figure>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="portfolio-card" data-custom>
+                                <a href="https://jip-janneke.nl/" class="portfolio-card__link" aria-label="website Jip & Janneke Kinderopvang"></a>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__title-wrapper">
+                                        <h2 class="portfolio-card__title">Jip & Janneke Kinderopvang</h2>
+                                        <span class="portfolio-card__date">okt 2023</span>
+                                    </div>
+                                    <p class="portfolio-card__description">Een buitenschoolse kinderopvang, maar de kindertjes hebben op dit design gekliederd en allerlei zonnetjes en lijntjes getekend, foei!</p>
+                                    <span class="badge portfolio-card__badge">custom design</span>
+                                    <span class="portfolio-card__button button--small">Bekijk website <span class="sr-only">Jip & Janneke Kinderopvang</span></span>
+                                </div>
+                                <figure class="portfolio-card__media-wrapper" aria-label="website Jip & Janneke Kinderopvang">
+                                    <img src="assets/img/Portfolios/Porfolio thumbnail - Jip & Janneke Kinderopvang.png" alt="Porfolio thumbnail - Jip & Janneke Kinderopvang" class="portfolio-card__media">
+                                </figure>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="portfolio-card" data-template>
+                                <a href="https://stimulusgym.nl/" class="portfolio-card__link" aria-label="website Stimulus Gym"></a>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__title-wrapper">
+                                        <h2 class="portfolio-card__title">Stimulus Gym</h2>
+                                        <span class="portfolio-card__date">feb 2024</span>
+                                    </div>
+                                    <p class="portfolio-card__description">Een sportschool die graag voor de donkere versie van het template heeft gekozen. Deze kleurstelling in combinatie met een paar custom design elementen zorgt voor een hele andere look en feel.</p>
+                                    <span class="badge portfolio-card__badge">template design</span>
+                                    <span class="portfolio-card__button button--small">Bekijk website <span class="sr-only">Stimulus Gym</span></span>
+                                </div>
+                                <figure class="portfolio-card__media-wrapper" aria-label="website Stimulus Gym">
+                                    <img src="assets/img/Portfolios/Porfolio thumbnail - Stimulus Gym.png" alt="Porfolio thumbnail - Stimulus Gym" class="portfolio-card__media">
+                                </figure>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="portfolio-card" data-custom>
+                                <a href="https://moniquekinderslaapcoach.nl/" class="portfolio-card__link" aria-label="website Monique Kinderslaapcoach"></a>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__title-wrapper">
+                                        <h2 class="portfolio-card__title">Monique Kinderslaapcoach</h2>
+                                        <span class="portfolio-card__date">26 apr 2024</span>
+                                    </div>
+                                    <p class="portfolio-card__description">Een simpele website zonder pakkende scrolleffecten en design elementen. De kracht van de vormgeving zit vooral in de ruimte en de typografie.</p>
+                                    <span class="badge portfolio-card__badge">custom design</span>
+                                    <span class="portfolio-card__button button--small">Bekijk website <span class="sr-only">Monique Kinderslaapcoach</span></span>
+                                </div>
+                                <figure class="portfolio-card__media-wrapper" aria-label="website Monique Kinderslaapcoach">
+                                    <img src="assets/img/Portfolios/Porfolio thumbnail - Monique Kinderslaapcoach.png" alt="Porfolio thumbnail - Monique Kinderslaapcoach" class="portfolio-card__media">
+                                </figure>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="portfolio-card" data-custom>
+                                <a href="http://greengage.energe-eu.com/" class="portfolio-card__link" aria-label="website Greengage EU"></a>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__title-wrapper">
+                                        <h2 class="portfolio-card__title">Greengage EU</h2>
+                                        <span class="portfolio-card__date">24 aug 2023</span>
+                                    </div>
+                                    <p class="portfolio-card__description">Deze website is aangevraagd door een groep studenten die hun project vol innovatieve ideeën wilden uitdragen.</p>
+                                    <span class="badge portfolio-card__badge">custom design</span>
+                                    <span class="portfolio-card__button button--small">Bekijk website <span class="sr-only">Greengage EU</span></span>
+                                </div>
+                                <figure class="portfolio-card__media-wrapper" aria-label="website Greengage EU">
+                                    <img src="assets/img/Portfolios/Porfolio thumbnail - Greengage EU.png" alt="Porfolio thumbnail - Greengage EU" class="portfolio-card__media">
+                                </figure>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="portfolio-card" data-template>
+                                <a href="https://meafysio.nl/" class="portfolio-card__link" aria-label="website MEA Fysio BV"></a>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__title-wrapper">
+                                        <h2 class="portfolio-card__title">MEA Fysio BV</h2>
+                                        <span class="portfolio-card__date">mei 2025</span>
+                                    </div>
+                                    <p class="portfolio-card__description">Een forse fysiotherapie praktijk met veel locaties en werknemers. Het was vooral de uitdaging om pratkijk van deze grootte in het template te proppen.</p>
+                                    <span class="badge portfolio-card__badge">template design</span>
+                                    <span class="portfolio-card__button button--small">Bekijk website <span class="sr-only">MEA Fysio BV</span></span>
+                                </div>
+                                <figure class="portfolio-card__media-wrapper" aria-label="website MEA Fysio BV">
+                                    <img src="assets/img/Portfolios/Porfolio thumbnail - MEA Fysio BV.png" alt="Porfolio thumbnail - MEA Fysio BV" class="portfolio-card__media">
+                                </figure>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer class="footer | section--wide">
+            <div class="footer-inner | section-inner">
+                <ul class="socials">
+                    <li>
+                        <a href="https://www.linkedin.com/in/jonathan-kraal-140352224/" target="_blank" aria-label="Bekijk mijn LinkedIn pagina">
+                            <i class="fa-brands fa-linkedin | icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" aria-label="Bekijk de source code in GitHub">
+                            <i class="fa-brands fa-github | icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Jonathan.l.kraal" target="_blank" aria-label="Bekijk mijn Facebook pagina">
+                            <i class="fa-brands fa-facebook | icon"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer__info">
+                    <div class="footer__info-nav-wrapper">
+                        <h3>Navigatie</h3>
+                        <nav class="footer__nav" aria-label="Hoofd">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="over-mij.html">Over mij</a></li>
+                                <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+                            </ul>
+                        </nav>
+                        <a href="assets/documents/CV Jonathan Kraal.pdf/" class="text-link" aria-label="download mijn CV (ODT, 2 pagina's, 28kB)" download>CV</a>
+                    </div>
+                    <div class="footer__info-contact-wrapper">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li>
+                                <a href="mailto:jonathan.kraal@solconmail.nl" target="_blank" class="text-link">jonathan.kraal@solconmail.nl</a>
+                            </li>
+                            <li>Buskruithof 4
+                                <br>
+                                2967 XN Langerak
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-tuner"></div>
+            </div>
+            <p class="footer__footnote">Website developed and designed by Jonathan Kraal</p>
+        </footer>
+    </div>
+</body>
+
+</html>
