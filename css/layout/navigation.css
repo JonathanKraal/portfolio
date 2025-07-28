@@ -1,0 +1,55 @@
+.nav--header ul {
+    display: flex;
+    gap: calc(var(--content-gap) * 1.5);
+    list-style: none;
+}
+
+.nav--header ul li a {
+    --_nav-link-bg-primary-percentage: 5%;
+    --_nav-link-bg-primary-alpha: 7.5%;
+    --_nav-link-dec-width: 1.25ch;
+    --_nav-link-dec-height: 2px;
+    --_nav-link-dec-offset: -.25lh;
+    --_nav-link-dec-bg: hsl(var(--hsl-primary) / 50%);
+
+    display: inline-grid;
+    place-items: center;
+    position: relative;
+    padding: .15lh 1ch;
+    background-color: color-mix(in oklab, hsl(var(--hsl-primary-light) / var(--_nav-link-bg-primary-alpha)) var(--_nav-link-bg-primary-percentage), hsl(var(--hsl-base-50) / 10%));
+    text-decoration: none;
+    color: var(--clr-primary-light);
+    outline: 1px solid transparent;
+    transition: outline var(--transition-very-fast) var(--transition-very-fast) ease-in;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset-block-end: var(--_nav-link-dec-offset);
+        inline-size: var(--_nav-link-dec-width);
+        block-size: var(--_nav-link-dec-height);
+        background-color: var(--_nav-link-dec-bg);
+        transition: inset-block-end var(--transition-fast), opacity var(--transition-fast) var(--transition-very-fast);
+    }
+
+    &[aria-current="page"] {
+        --_nav-link-bg-primary-percentage: 35%;
+        --_nav-link-bg-primary-alpha: 40%;
+        --_nav-link-dec-width: 3ch;
+        --_nav-link-dec-offset: calc(var(--_nav-link-dec-height) * -1);
+
+        &::after { /*redefine the decoration background-color on the pseudo element instead of the parent, to avoid having the outline hover color be affected*/
+            --_nav-link-dec-bg: hsl(var(--hsl-primary));
+        }
+    }
+
+    &:hover,
+    &:focus {
+        outline: 2px solid var(--_nav-link-dec-bg);
+
+        &::after {
+            inset-block-end: calc(var(--_nav-link-dec-height) * -1);
+            opacity: 0;
+        }        
+    }
+}

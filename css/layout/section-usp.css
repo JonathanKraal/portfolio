@@ -1,0 +1,20 @@
+.section--usp {
+    --_usp-counter-pad-block: .65ex;
+
+    position: relative;
+    padding-block-end: calc(var(--_usp-counter-pad-block) * 2 + 1cap + .625lh); /*to account for the pseudo-element of the USP card encroaching on the section block space; add lh to account for the lineheight of the pseudo-element*/
+    font-size: var(--fs-body-large); /*font-size for the pseudo element on the USP card*/
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.section--usp .section-inner {
+    display: block;
+    padding-block-end: 0;
+
+    @media (max-width: 1000px) {
+        display: grid;
+    }
+}

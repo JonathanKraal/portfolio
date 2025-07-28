@@ -1,0 +1,112 @@
+/* || LEGEND
+	
+	4 classes available:
+    -section--narrow: a narrower variant of the default section content width
+	-section--wide: a wider variant of the default section content width
+    -section--full: the section content spans the entire viewport
+	-section--center: centers every element and text alignment inside the section
+	-section--ultra-light: a slightly lighter variant of the section's light background color
+	-section--light: a slightly lighter variant of the section's base background color
+
+*/
+
+/*==================================================================*/
+
+/* || ALL SECTIONS */
+
+/*sections and any element that visually behaves like a section*/
+:where(section:not(section section), .header, .footer) {
+    grid-column: viewport-start / viewport-end;
+    display: grid;
+    grid-template-columns: subgrid;
+    row-gap: var(--space-m);
+}
+
+.section-inner {
+    grid-column: content-start / content-end;
+    padding-block: var(--section-space);
+}
+
+section:last-child > .section-inner {
+    padding-block-end: calc(var(--section-space) * 2);
+
+    @media (max-width: 900px) {
+        padding-block-end: calc(var(--section-space) * 1.5);
+    }
+}
+
+/*==================================================================*/
+
+/* || MODIFIERS */
+
+/*section with light bg clr*/
+.section--light {
+    --_btn-dec-bg: var(--clr-base-light);
+    
+    background-color: var(--clr-base-light);
+}
+
+.section--ultra-light {
+    --_btn-dec-bg: var(--clr-base-light);
+    
+    background-color: hsl(from hsl(var(--hsl-base-800)) h s 6.75%);
+}
+
+.section--center {
+    align-items: center;
+    text-align: center;
+
+    > .section-inner {
+        display: grid;
+        justify-items: center;
+    }
+}
+
+.section--narrow > .section-inner {
+    grid-column: content-narrow-start / content-narrow-end;
+}
+
+.section--wide > .section-inner {
+    grid-column: content-wide-start / content-wide-end;
+}
+
+.section--full > .section-inner {
+    grid-column: viewport-start / viewport-end;
+}
+
+/*make sure .content-width--safe elements are able to be centered*/
+.section--full > .section-inner:has(> .content-width--safe) {
+    display: grid;
+}
+
+.section--with-divider {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0 var(--_gutter) auto var(--_gutter);
+        z-index: 2;
+        height: 1px;
+        background-color: var(--clr-divider);
+        box-shadow: var(--box-shadow-divider);
+    }
+}
+
+/*==================================================================*/
+
+/* || DECORATIONAL ELEMENT */
+
+.hero + section {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0 auto auto 0;
+        z-index: -1;
+        inline-size: min(68rem, 56%);
+        aspect-ratio: 1.2 / 1;
+        background-color: var(--clr-base-light);
+    }
+}

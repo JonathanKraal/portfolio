@@ -1,0 +1,43 @@
+.body-inner {
+    --_gutter: 3.5rem;
+    --_content-narrow-width: 100rem;
+    --_content-width-increment: 40rem; /*how much wider is content-width compared to content-width-narrow*/
+    --_content-width-wide-increment: 76rem; /*how much wider is content-width compared to content-width-narrow*/
+    --_column-number-narrow: 8;
+
+    display: grid;
+    grid-template-columns: [viewport-start gutter-left-start] var(--_gutter) [gutter-left-end content-wide-start content-start content-narrow-start] repeat(8, [content-narrow-start] minmax(auto, 1fr)) [content-narrow-end content-end content-wide-end gutter-right-start] var(--_gutter) [gutter-right-end viewport-end];
+    justify-content: center;
+    inline-size: 100%;
+}
+
+@media (min-width: 800px) {
+    .body-inner {
+        grid-template-columns: [viewport-start] minmax(0, 1fr) [gutter-left-start] var(--_gutter) [gutter-left-end content-wide-start] minmax(var(--_content-start-min-width, auto), calc(var(--_content-width-wide-increment) / 2)) [content-start] minmax(auto, calc(var(--_content-width-increment) / 2)) repeat(var(--_column-number-narrow), [content-narrow-start] minmax(auto, calc(var(--_content-narrow-width) / var(--_column-number-narrow)))) [content-narrow-end] minmax(auto, calc(var(--_content-width-increment) / 2)) [content-end] minmax(auto, calc(var(--_content-width-wide-increment) / 2)) [content-wide-end gutter-right-start] var(--_gutter) [gutter-right-end] minmax(0, 1fr) [viewport-end];
+    }/*[content-narrow-start] minmax(auto, 150ch) as center column*/
+}
+
+.gutter-start {
+    grid-column: gutter-left-start / gutter-left-end;
+    background: red;
+}
+
+.gutter-end {
+    grid-column: gutter-right-start / gutter-right-end;
+    background: red;
+}
+
+.content-wide {
+    grid-column: content-wide-start / content-wide-end;
+    background: orange;
+}
+
+.content {
+    grid-column: content-start / content-end;
+    background: purple;
+}
+
+.content-narrow {
+    grid-column: content-narrow-start / content-narrow-end;
+    background: red;
+}

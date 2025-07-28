@@ -1,0 +1,499 @@
+.section--short-bio {
+    --_decoration-bubbles-size: 10rem;
+    /*positions*/
+    --_bubble-1-x-after: -1.7em;
+
+    position: relative;
+    background-image: linear-gradient(to left, hsl(from var(--clr-secondary-dark) h s var(--lightness-600) / 7%) 44%, transparent 44%);
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0 0 auto auto;
+        inline-size: var(--_decoration-bubbles-size);
+        aspect-ratio: 1;
+        background-color: hsl(var(--hsl-primary-dark) / 45%);
+        transition-duration: .4s;
+
+        @media (prefers-reduced-motion: no-preference) {
+            animation: bubbles 6s linear infinite;
+        }
+    }
+
+    /*order from largest to smallest*/
+    &::before {
+        box-shadow: calc(var(--_bubble-1-before-offset-x) * 1em) calc(var(--_bubble-1-before-offset-y) * 1em) 0 calc(var(--_bubble-1-before-size) * 1em) hsl(var(--hsl-primary-dark) / 30%),
+                    calc(var(--_bubble-2-before-offset-x) * 1em) calc(var(--_bubble-2-before-offset-y) * 1em) 0 calc(var(--_bubble-2-before-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-900) / 50%),
+                    calc(var(--_bubble-3-before-offset-x) * 1em) calc(var(--_bubble-3-before-offset-y) * 1em) 0 calc(var(--_bubble-3-before-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-500) / 13%),
+                    calc(var(--_bubble-4-before-offset-x) * 1em) calc(var(--_bubble-4-before-offset-y) * 1em) 0 calc(var(--_bubble-4-before-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-400) / 25%),
+                    calc(var(--_bubble-5-before-offset-x) * 1em) calc(var(--_bubble-5-before-offset-y) * 1em) 0 calc(var(--_bubble-5-before-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-700) / 12.5%);
+        
+        @media (prefers-reduced-motion: no-preference) {
+            animation: bubbles-position-before linear forwards;
+            animation-timeline: view();
+            animation-range: 10% 90%;
+        }
+    }
+
+    
+
+    &::after {
+        inset: auto 0 0 auto;
+        box-shadow: calc(var(--_bubble-1-after-offset-x) * 1em) calc(var(--_bubble-1-after-offset-y) * 1em) 0 calc(var(--_bubble-1-after-size) * 1em) hsl(var(--hsl-primary-dark) / 25%),
+                    calc(var(--_bubble-2-after-offset-x) * 1em) calc(var(--_bubble-2-after-offset-y) * 1em) 0 calc(var(--_bubble-2-after-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-800) / 20%),
+                    calc(var(--_bubble-3-after-offset-x) * 1em) calc(var(--_bubble-3-after-offset-y) * 1em) 0 calc(var(--_bubble-3-after-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-400) / 13%),
+                    calc(var(--_bubble-4-after-offset-x) * 1em) calc(var(--_bubble-4-after-offset-y) * 1em) 0 calc(var(--_bubble-4-after-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-500) / 23%),
+                    calc(var(--_bubble-5-after-offset-x) * 1em) calc(var(--_bubble-5-after-offset-y) * 1em) 0 calc(var(--_bubble-5-after-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-900) / 50%),
+                    calc(var(--_bubble-6-after-offset-x) * 1em) calc(var(--_bubble-6-after-offset-y) * 1em) 0 calc(var(--_bubble-6-after-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-700) / 23%),
+                    calc(var(--_bubble-7-after-offset-x) * 1em) calc(var(--_bubble-7-after-offset-y) * 1em) 0 calc(var(--_bubble-7-after-size) * 1em) hsl(var(--hsl-primary-dark) / 30%),
+                    calc(var(--_bubble-8-after-offset-x) * 1em) calc(var(--_bubble-8-after-offset-y) * 1em) 0 calc(var(--_bubble-8-after-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-400) / 15%),
+                    calc(var(--_bubble-9-after-offset-x) * 1em) calc(var(--_bubble-9-after-offset-y) * 1em) 0 calc(var(--_bubble-9-after-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-400) / 15%),
+                    calc(var(--_bubble-10-after-offset-x) * 1em) calc(var(--_bubble-10-after-offset-y) * 1em) 0 calc(var(--_bubble-10-after-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-500) / 15%),
+                    calc(var(--_bubble-11-after-offset-x) * 1em) calc(var(--_bubble-11-after-offset-y) * 1em) 0 calc(var(--_bubble-11-after-size) * 1em) hsl(from var(--clr-primary) h s var(--lightness-400) / 15%);
+
+        @media (prefers-reduced-motion: no-preference) {
+            animation: bubbles-position-after linear forwards;
+            animation-timeline: view();
+            animation-range: 10% 90%;
+        }
+    }
+
+    @media (max-width: 900px) {
+        &::before {
+            --_decoration-bubbles-size: 8.5rem;
+        }
+
+        
+        &::after {
+            --_decoration-bubbles-size: 9rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+    }
+}
+
+@keyframes bubbles {
+    35% {
+        scale: .955;
+        translate: -15% 0;
+    }
+
+    80% {
+        scale: 1.025;
+        translate: -10% -15%;
+    }
+}
+
+@keyframes bubbles-position-before {
+    35% {
+        scale: 1.025;
+        translate: 10% -12.5%;
+    }
+
+    80% {
+        scale: .955;
+        translate: -15% 7.5%;
+    }
+
+    100% {
+        /*position*/
+        --_bubble-1-before-offset-x: -2.75;
+        --_bubble-1-before-offset-y: 3.7;
+        --_bubble-2-before-offset-x: -7.75;
+        --_bubble-2-before-offset-y: -1.7;
+        --_bubble-3-before-offset-x: -7.5;
+        --_bubble-3-before-offset-y: 3.15;
+        --_bubble-4-before-offset-x: 2.5;
+        --_bubble-4-before-offset-y: 7.25;
+        --_bubble-5-before-offset-x: -4.5;
+        --_bubble-5-before-offset-y: 6.5;
+
+        /*size*/
+        --_bubble-1-before-size: -.7;
+        --_bubble-2-before-size: -1.3;
+        --_bubble-3-before-size: -.9;
+        --_bubble-4-before-size: -.8;
+        --_bubble-5-before-size: -1.4;
+    }
+}
+
+@keyframes bubbles-position-after {
+    35% {
+        scale: .955;
+        translate: -15% 5%;
+    }
+
+    80% {
+        scale: 1.025;
+        translate: -5% -15%;
+    }
+
+    100% {
+        /*position*/
+        --_bubble-1-after-offset-x: -1.7;
+        --_bubble-1-after-offset-y: -5.2;
+        --_bubble-2-after-offset-x: -9.35;
+        --_bubble-2-after-offset-y: 2;
+        --_bubble-3-after-offset-x: 1.6;
+        --_bubble-3-after-offset-y: -8.1;
+        --_bubble-4-after-offset-x: -1;
+        --_bubble-4-after-offset-y: -12.9;
+        --_bubble-5-after-offset-x: -3.7;
+        --_bubble-5-after-offset-y: -2.9;
+        --_bubble-6-after-offset-x: -7.2;
+        --_bubble-6-after-offset-y: -2.6;
+        --_bubble-7-after-offset-x: -5.2;
+        --_bubble-7-after-offset-y: -8.5;
+        --_bubble-8-after-offset-x: -11.9;
+        --_bubble-8-after-offset-y: -3.7;
+        --_bubble-9-after-offset-x: -4.7;
+        --_bubble-9-after-offset-y: -13.7;
+        --_bubble-10-after-offset-x: -1.5;
+        --_bubble-10-after-offset-y: -15.1;
+        --_bubble-11-after-offset-x: -9;
+        --_bubble-11-after-offset-y: -8.3;
+
+        /*size*/
+        --_bubble-1-after-size: -.5;
+        --_bubble-2-after-size: -.9;
+        --_bubble-3-after-size: -.8;
+        --_bubble-4-after-size: -1.7;
+        --_bubble-5-after-size: -1;
+        --_bubble-6-after-size: -1.35;
+        --_bubble-7-after-size: -1.3;
+        --_bubble-8-after-size: -1.5;
+        --_bubble-9-after-size: -2;
+        --_bubble-10-after-size: -2.4;
+        --_bubble-11-after-size: -2.1;
+
+
+
+        /*position*/
+        --_bubble-1-before-offset-x: -2.75;
+        --_bubble-1-before-offset-y: 3.7;
+        --_bubble-2-before-offset-x: -7.75;
+        --_bubble-2-before-offset-y: -1.7;
+        --_bubble-3-before-offset-x: -7.5;
+        --_bubble-3-before-offset-y: 3.15;
+        --_bubble-4-before-offset-x: 2.5;
+        --_bubble-4-before-offset-y: 7.25;
+        --_bubble-5-before-offset-x: -4.5;
+        --_bubble-5-before-offset-y: 6.5;
+
+        /*size*/
+        --_bubble-1-before-size: -.7;
+        --_bubble-2-before-size: -1.3;
+        --_bubble-3-before-size: -.9;
+        --_bubble-4-before-size: -.8;
+        --_bubble-5-before-size: -1.4;
+    }
+}
+
+
+
+
+/*&::before {
+        box-shadow: -4em 1.7em 0 -0.1em hsl(var(--hsl-primary-dark) / 30%),
+                    -6.75em .4em 0 -.5em hsl(var(--hsl-primary-dark) / 30%),
+                    -9.5em -2em 0 -1.4em hsl(from var(--clr-primary) h s var(--lightness-900) / 50%),
+                    -.5em 5.25em 0 -1.1em hsl(var(--hsl-primary-dark) / 50%),
+                    -3em 8.5em 0 -0.1em hsl(from var(--clr-primary) h s var(--lightness-900) / 80%);
+    }*/
+
+/*==============================================================*/
+
+/* || REGISTER CUSTOM PROPERTIES */
+
+/*bubbles position ::before*/
+@property --_bubble-1-before-offset-x {
+    syntax: '<number>';
+    initial-value: -4;
+    inherits: false;
+}
+
+@property --_bubble-1-before-offset-y {
+    syntax: '<number>';
+    initial-value: 1.7;
+    inherits: false;
+}
+
+@property --_bubble-2-before-offset-x {
+    syntax: '<number>';
+    initial-value: -6.75;
+    inherits: false;
+}
+
+@property --_bubble-2-before-offset-y {
+    syntax: '<number>';
+    initial-value: .4;
+    inherits: false;
+}
+
+@property --_bubble-3-before-offset-x {
+    syntax: '<number>';
+    initial-value: -9.5;
+    inherits: false;
+}
+
+@property --_bubble-3-before-offset-y {
+    syntax: '<number>';
+    initial-value: 2;
+    inherits: false;
+}
+
+@property --_bubble-4-before-offset-x {
+    syntax: '<number>';
+    initial-value: -.5;
+    inherits: false;
+}
+
+@property --_bubble-4-before-offset-y {
+    syntax: '<number>';
+    initial-value: 5.25;
+    inherits: false;
+}
+
+@property --_bubble-5-before-offset-x {
+    syntax: '<number>';
+    initial-value: -3;
+    inherits: false;
+}
+
+@property --_bubble-5-before-offset-y {
+    syntax: '<number>';
+    initial-value: 8.5;
+    inherits: false;
+}
+
+/*bubbles sizes ::before*/
+@property --_bubble-1-before-size {
+    syntax: '<number>';
+    initial-value: -.1;
+    inherits: false;
+}
+
+@property --_bubble-2-before-size {
+    syntax: '<number>';
+    initial-value: -.5;
+    inherits: false;
+}
+
+@property --_bubble-3-before-size {
+    syntax: '<number>';
+    initial-value: -1.4;
+    inherits: false;
+}
+
+@property --_bubble-4-before-size {
+    syntax: '<number>';
+    initial-value: -1.1;
+    inherits: false;
+}
+
+@property --_bubble-5-before-size {
+    syntax: '<number>';
+    initial-value: -.7;
+    inherits: false;
+}
+
+/*bubbles position ::after*/
+@property --_bubble-1-after-offset-x {
+    syntax: '<number>';
+    initial-value: -.7;
+    inherits: false;
+}
+
+@property --_bubble-1-after-offset-y {
+    syntax: '<number>';
+    initial-value: -4.3;
+    inherits: false;
+}
+
+@property --_bubble-2-after-offset-x {
+    syntax: '<number>';
+    initial-value: -7.1;
+    inherits: false;
+}
+
+@property --_bubble-2-after-offset-y {
+    syntax: '<number>';
+    initial-value: .2;
+    inherits: false;
+}
+
+@property --_bubble-3-after-offset-x {
+    syntax: '<number>';
+    initial-value: 0;
+    inherits: false;
+}
+
+@property --_bubble-3-after-offset-y {
+    syntax: '<number>';
+    initial-value: -6.9;
+    inherits: false;
+}
+
+@property --_bubble-4-after-offset-x {
+    syntax: '<number>';
+    initial-value: 1;
+    inherits: false;
+}
+
+@property --_bubble-4-after-offset-y {
+    syntax: '<number>';
+    initial-value: -9.9;
+    inherits: false;
+}
+
+@property --_bubble-5-after-offset-x {
+    syntax: '<number>';
+    initial-value: -4.7;
+    inherits: false;
+}
+
+@property --_bubble-5-after-offset-y {
+    syntax: '<number>';
+    initial-value: 1.9;
+    inherits: false;
+}
+
+@property --_bubble-6-after-offset-x {
+    syntax: '<number>';
+    initial-value: -6.2;
+    inherits: false;
+}
+
+@property --_bubble-6-after-offset-y {
+    syntax: '<number>';
+    initial-value: -4.1;
+    inherits: false;
+}
+
+@property --_bubble-7-after-offset-x {
+    syntax: '<number>';
+    initial-value: -4.2;
+    inherits: false;
+}
+
+@property --_bubble-7-after-offset-y {
+    syntax: '<number>';
+    initial-value: -9.1;
+    inherits: false;
+}
+
+@property --_bubble-8-after-offset-x {
+    syntax: '<number>';
+    initial-value: -10.7;
+    inherits: false;
+}
+
+@property --_bubble-8-after-offset-y {
+    syntax: '<number>';
+    initial-value: -2.5;
+    inherits: false;
+}
+
+@property --_bubble-9-after-offset-x {
+    syntax: '<number>';
+    initial-value: -2.7;
+    inherits: false;
+}
+
+@property --_bubble-9-after-offset-y {
+    syntax: '<number>';
+    initial-value: -13.1;
+    inherits: false;
+}
+
+@property --_bubble-10-after-offset-x {
+    syntax: '<number>';
+    initial-value: .3;
+    inherits: false;
+}
+
+@property --_bubble-10-after-offset-y {
+    syntax: '<number>';
+    initial-value: -14.1;
+    inherits: false;
+}
+
+@property --_bubble-11-after-offset-x {
+    syntax: '<number>';
+    initial-value: -7.7;
+    inherits: false;
+}
+
+@property --_bubble-11-after-offset-y {
+    syntax: '<number>';
+    initial-value: -7.1;
+    inherits: false;
+}
+
+/*bubbles sizes ::after*/
+@property --_bubble-1-after-size {
+    syntax: '<number>';
+    initial-value: .2;
+    inherits: false;
+}
+
+@property --_bubble-2-after-size {
+    syntax: '<number>';
+    initial-value: -.5;
+    inherits: false;
+}
+
+@property --_bubble-3-after-size {
+    syntax: '<number>';
+    initial-value: -.6;
+    inherits: false;
+}
+
+@property --_bubble-4-after-size {
+    syntax: '<number>';
+    initial-value: -1.2;
+    inherits: false;
+}
+
+@property --_bubble-5-after-size {
+    syntax: '<number>';
+    initial-value: -1.2;
+    inherits: false;
+}
+
+@property --_bubble-6-after-size {
+    syntax: '<number>';
+    initial-value: -1.6;
+    inherits: false;
+}
+
+@property --_bubble-7-after-size {
+    syntax: '<number>';
+    initial-value: -1.6;
+    inherits: false;
+}
+
+@property --_bubble-8-after-size {
+    syntax: '<number>';
+    initial-value: -1.8;
+    inherits: false;
+}
+
+@property --_bubble-9-after-size {
+    syntax: '<number>';
+    initial-value: -2;
+    inherits: false;
+}
+
+@property --_bubble-10-after-size {
+    syntax: '<number>';
+    initial-value: -2.3;
+    inherits: false;
+}
+
+@property --_bubble-11-after-size {
+    syntax: '<number>';
+    initial-value: -2.3;
+    inherits: false;
+}

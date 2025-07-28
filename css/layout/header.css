@@ -1,0 +1,23 @@
+.header {
+    grid-row: 1;
+    align-self: start;
+    z-index: 99;
+    padding-block: var(--space-m);
+}
+
+.header-inner {
+    grid-column: content-wide-start / content-wide-end;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--content-gap) calc(var(--content-gap) * 2);
+
+    @media (max-width: 580px) {
+        flex-direction: column;
+    }
+}
+
+.header__logo {
+    block-size: clamp(6rem, 7.5vw, 8.25rem);
+}
