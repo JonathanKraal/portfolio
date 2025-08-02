@@ -55,13 +55,14 @@
 /* || ALL HEROES */
 
 .hero {
-    --section-space: calc(var(--space-2xl) * 2);
+    --section-space: calc(var(--space-2xl) * 1.25);
     --_decoration-col-position: -2;
     --_section-pad-block: clamp(var(--section-space), 20vw, calc(var(--section-space) * 2.5));
 
     grid-template-rows: var(--_section-pad-block) auto var(--_section-pad-block);
     row-gap: 0;
     position: relative;
+    padding-block-start: calc(var(--space-2xl) * 1.25);
 
     /*watermarks*/
     &::before {
@@ -138,7 +139,7 @@
 
     @media (max-width: 480px) {
         #slide-tuner-hero-bottom {
-            display: none;
+            inset: auto auto -15rem auto;
         }
     }
 }
