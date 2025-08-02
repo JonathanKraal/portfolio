@@ -1,9 +1,13 @@
 .usp-wrapper {
-    --gap: var(--space-3xl);
+    --gap: var(--space-2xl);
 
     grid-column: content-narrow-start 2 / content-wide-end;
     justify-items: end;
     counter-reset: step;
+
+    @media (max-width: 1930px) {
+        grid-column: content-narrow-start 1 / content-wide-end;
+    }
 
     @media (max-width: 1000px) {
         grid-column: content-wide-start / content-wide-end;
