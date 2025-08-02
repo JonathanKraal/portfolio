@@ -1,6 +1,7 @@
 .footer {
     --_footer-link-spacing: calc(var(--content-gap) / 2);
-
+    
+    row-gap:0
     position: relative;
     padding-block-end: 4rem;
     background-color: var(--clr-base-light);
@@ -12,23 +13,23 @@
         inset: auto 0 100% auto;
         inline-size: 20%;
         aspect-ratio: 2.5 / 1.45;
-        background-color: inherit;
+        background-color: inherit;        
+
+        @media (max-width: 560px) {
+            inline-size: 30%;
+            aspect-ratio: 1.5 / 1.45;
+        }
     }
 }
 
 .footer-inner {
-    --section-space: calc(var(--space-3xl) * 1.5);
+    --section-space: calc(var(--space-2xl) * 1.5);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: var(--space-xl);
     position: relative;
-
-    /*add empty pseudo-element to act as the last flex item*/
-    &::after {
-        content: '';
-    }
 
     .slide-tuner {
         --_tuner-clr: var(--clr-primary-subtle);
@@ -46,6 +47,11 @@
     @media (min-width: 480px) {
         flex-direction: row;
         align-items: center;
+        
+        /*add empty pseudo-element to act as the last flex item*/
+        &::after {
+            content: '';
+        }
 
         .slide-tuner {
             block-size: clamp(35rem, 23vw, 51rem);
