@@ -108,5 +108,9 @@ section:last-child > .section-inner {
         inline-size: min(68rem, 56%);
         aspect-ratio: 1.2 / 1;
         background-color: var(--clr-base-light);
+
+        @media (max-width: 650px) {
+            aspect-ratio: 2.5 / 1;
+        }
     }
 }
