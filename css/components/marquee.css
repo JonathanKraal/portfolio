@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding-block: var(--section-space);
+    padding-block: calc(var(--section-space) / 1.75);
     background-image: linear-gradient(to left, hsl(var(--_marquee-bg-color) / 10%), hsl(var(--_marquee-bg-color)));
     
     @media (prefers-reduced-motion: no-preference) {
