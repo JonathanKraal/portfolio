@@ -3,7 +3,6 @@
 
     display: grid;
     place-items: center;
-    position: relative;
     isolation: isolate;
     font-weight: var(--fw-semi-bold);
 
@@ -16,7 +15,7 @@
         display: block;
         position: absolute;
         inline-size: 2rem;
-        block-size: 25rem;
+        block-size: calc(var(--_score-bar-height) + var(--_score-bar-height-extra));
         border-radius: 2px;
         background-image: linear-gradient(to top, hsl(from var(--_parent-clr, var(--clr-primary)) h s var(--lightness-900) / var(--_opacity-bar-base)), hsl(from var(--_parent-clr, var(--clr-primary)) h s var(--lightness-800) / var(--_opacity-bar-base)) 63%, hsl(from var(--_parent-clr, var(--clr-primary)) h s var(--lightness-300) / var(--_opacity-bar-base)));
 
@@ -32,8 +31,6 @@
         }
     }
 }
-
-
 
 .list {
     list-style: none;
