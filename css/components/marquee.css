@@ -45,7 +45,7 @@
 .marquee--tools img {
     max-inline-size: var(--_img-max-width, clamp(15rem, 15vw, 27rem));
     block-size: 100%;
-    max-block-size: 17rem;
+    max-block-size: clamp(9rem, 10vw, 17rem);
     object-fit: contain;
     mix-blend-mode: luminosity;
 
@@ -70,3 +70,4 @@
         inset-inline-start: calc(var(--_item-repsonsive-offset) / var(--_amount-of-items) * -1); /*push the item outside of the container before starting the animation again*/
     }
 }
+
