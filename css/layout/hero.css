@@ -1,68 +1,13 @@
-.hero__inner {
-    --max-width-hero-content: 77rem;
-
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: var(--space-xl);
-    position: relative;
-    inline-size: 100%;
-    padding-block: var(--section-space);
-    /*animation: intro var(--transition-medium) ease-in-out forwards;*/
-}
-
-@keyframes intro {
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.hero__content {
-    max-inline-size: var(--max-width-hero-content);
-
-    p {
-        margin-block-end: var(--space-xl);
-    }
-
-    a {        
-        margin-block-start: auto;
-    }
-}
-
-.hero__intro,
-.hero__biography {
-    max-inline-size: var(--max-width-hero-content);
-
-    h1, h2 {
-        margin-block-end: var(--space-s);
-    }
-
-    .hero__lede {
-        font-size: var(--fs-body-large);
-        margin-block-end: var(--space-s); /*defensive CSS*/
-    }
-
-    .socials {
-        position: absolute;
-        inset-block-end: 0;
-        margin-block-start: auto; /*defensive CSS*/
-    }
-}
-
-/*==================================================================*/
-
 /* || ALL HEROES */
 
 .hero {
     --section-space: calc(var(--space-2xl) * 1.25);
     --_decoration-col-position: -2;
-    --_section-pad-block: clamp(var(--section-space), 20vw, calc(var(--section-space) * 2.5));
+    --_section-pad-block: clamp(var(--section-space), 20vw, calc(var(--section-space) * 3));
 
     grid-template-rows: var(--_section-pad-block) auto var(--_section-pad-block);
     row-gap: 0;
     position: relative;
-    padding-block-start: calc(var(--space-2xl) * 1.25);
 
     /*watermarks*/
     &::before {
@@ -171,6 +116,62 @@
 
 /*==================================================================*/
 
+/* || INNER WRAPPER*/
+
+.hero__inner {
+    --max-width-hero-content: 77rem;
+
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: var(--space-xl);
+    position: relative;
+    inline-size: 100%;
+    padding-block: var(--section-space);
+    /*animation: intro var(--transition-medium) ease-in-out forwards;*/
+}
+
+@keyframes intro {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hero__content {
+    max-inline-size: var(--max-width-hero-content);
+
+    p {
+        margin-block-end: var(--space-xl);
+    }
+
+    a {        
+        margin-block-start: auto;
+    }
+}
+
+.hero__intro,
+.hero__biography {
+    max-inline-size: var(--max-width-hero-content);
+
+    h1, h2 {
+        margin-block-end: var(--space-s);
+    }
+
+    .hero__lede {
+        font-size: var(--fs-body-large);
+        margin-block-end: var(--space-s); /*defensive CSS*/
+    }
+
+    .socials {
+        position: absolute;
+        inset-block-end: 0;
+        margin-block-start: auto; /*defensive CSS*/
+    }
+}
+
+/*==================================================================*/
+
 /* || ABOUT ME */
 
 .hero--about-me {
@@ -232,3 +233,4 @@
         --_frame-ratio: unset;
     }
 }
+
